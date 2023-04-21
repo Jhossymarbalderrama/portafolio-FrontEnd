@@ -1,0 +1,13 @@
+*{
+    font-family: monospace;
+    color: #393939;
+}
+
+h2{
+    font-weight: 600;
+}
+
+.container_hss{     
+    padding: 1em;
+    background-color: #00348e3d;
+}
