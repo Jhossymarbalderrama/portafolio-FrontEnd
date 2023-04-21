@@ -10,8 +10,10 @@ import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { SocialComponent } from './componentes/header/social/social.component';
 import { LogoComponent } from './componentes/header/logo/logo.component';
-import { BannerComponent } from './componentes/portafolio/banner/banner.component';
+import { BannerComponent } from './componentes/header/banner/banner.component';
 import { AcercaDeComponent } from './componentes/portafolio/acerca-de/acerca-de.component';
+import { ExperienciaComponent } from './componentes/portafolio/experiencia/experiencia.component';
+import { EducacionComponent } from './componentes/portafolio/educacion/educacion.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { AcercaDeComponent } from './componentes/portafolio/acerca-de/acerca-de.
     FooterComponent,
     LoginComponent,
     RegistroComponent,    
-    SocialComponent, LogoComponent, BannerComponent, AcercaDeComponent    
+    SocialComponent, 
+    LogoComponent, 
+    BannerComponent, 
+    AcercaDeComponent, ExperienciaComponent, EducacionComponent    
   ],
   imports: [
     BrowserModule,

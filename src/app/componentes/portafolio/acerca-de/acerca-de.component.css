@@ -3,10 +3,23 @@
     margin-bottom: 2em;
 }
 
-.perfil{    
-    z-index: 4;    
-    width: 12em;
-    margin-top: -15.5em;
+@media (min-width:576px){
+    .perfil{    
+        z-index: 4;    
+        width: 12em;
+        margin-top: -15.5em;
+        margin-left: 5em;
+    }
+}
+
+
+@media (max-width:576px){
+    .perfil{    
+        z-index: 4;    
+        width: 12em;
+        margin-top: -13em;
+        margin-left: 20%;      
+    }    
 }
 
 .perfil_foto{
