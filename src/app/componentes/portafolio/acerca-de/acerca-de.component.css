@@ -1,0 +1,40 @@
+.container{
+    margin-top: 8em;
+    margin-bottom: 2em;
+}
+
+.perfil{    
+    z-index: 4;    
+    width: 12em;
+    margin-top: -15.5em;
+}
+
+.perfil_foto{
+    z-index: 4;
+    border-radius: 100%;
+    border: 7px solid white;
+}
+
+.perfil_info{    
+    width: 240px;
+    text-align: center;
+        
+    font-weight: bold;        
+}
+
+.perfil_titulo{
+    font-size: 18px;  
+}
+
+.perfil_nombre{
+    font-size: 20px;
+    color: #00358E;
+}
+
+.perfil_info_sobre_mi{
+    z-index: 4;
+    /* margin-top: -6em; */
+    margin-left: 2em;
+    font-weight: 600;
+    margin-bottom: 3em;
+}

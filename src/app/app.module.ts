@@ -8,8 +8,10 @@ import { HeaderComponent } from './componentes/header/header.component';
 import { FooterComponent } from './componentes/footer/footer.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
-import { LogoComponent } from './componentes/header/logo/logo.component';
 import { SocialComponent } from './componentes/header/social/social.component';
+import { LogoComponent } from './componentes/header/logo/logo.component';
+import { BannerComponent } from './componentes/portafolio/banner/banner.component';
+import { AcercaDeComponent } from './componentes/portafolio/acerca-de/acerca-de.component';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,8 @@ import { SocialComponent } from './componentes/header/social/social.component';
     HeaderComponent,
     FooterComponent,
     LoginComponent,
-    RegistroComponent,
-    LogoComponent,
-    SocialComponent
+    RegistroComponent,    
+    SocialComponent, LogoComponent, BannerComponent, AcercaDeComponent    
   ],
   imports: [
     BrowserModule,
