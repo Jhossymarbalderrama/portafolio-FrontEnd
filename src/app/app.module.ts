@@ -18,6 +18,8 @@ import { EducacionComponent } from './componentes/portafolio/educacion/educacion
 import { HardSoftSkillsComponent } from './componentes/portafolio/hard-soft-skills/hard-soft-skills.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectoComponent } from './componentes/portafolio/proyecto/proyecto.component';
+import { LogoFooterComponent } from './componentes/footer/logo-footer/logo-footer.component';
+import { SocialFooterComponent } from './componentes/footer/social-footer/social-footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { ProyectoComponent } from './componentes/portafolio/proyecto/proyecto.co
     SocialComponent, 
     LogoComponent, 
     BannerComponent, 
-    AcercaDeComponent, ExperienciaComponent, EducacionComponent, HardSoftSkillsComponent, ProyectoComponent    
+    AcercaDeComponent, ExperienciaComponent, EducacionComponent, HardSoftSkillsComponent, ProyectoComponent, LogoFooterComponent, SocialFooterComponent    
   ],
   imports: [
     BrowserModule,

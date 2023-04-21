@@ -1,0 +1,38 @@
+
+.background{
+    background-color: #000000e9;       
+}
+
+.row {
+    margin:0px;
+}
+
+
+@media (min-width:576px){
+    app-logo-footer{
+        padding-left: 15%;
+        padding-right: 5%;
+    }
+    
+    app-social-footer{
+        float: right;
+        padding-right: 20%; 
+        padding-left: 5%;
+        padding-top: 4%;
+    }
+}
+
+
+@media (max-width:576px){
+    app-logo-footer{
+        padding-left: 10%;
+        padding-right: 5%;
+    }
+    
+    app-social-footer{
+        float: right;
+        padding-right: 30%; 
+        padding-left: 5%;
+        padding-top: 2%;
+    }   
+}
