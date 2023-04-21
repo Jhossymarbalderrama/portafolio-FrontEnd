@@ -15,8 +15,8 @@ import { AcercaDeComponent } from './componentes/portafolio/acerca-de/acerca-de.
 import { ExperienciaComponent } from './componentes/portafolio/experiencia/experiencia.component';
 import { EducacionComponent } from './componentes/portafolio/educacion/educacion.component';
 
-import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HardSoftSkillsComponent } from './componentes/portafolio/hard-soft-skills/hard-soft-skills.component';
+import { NgCircleProgressModule } from 'ng-circle-progress';
 
 @NgModule({
   declarations: [
@@ -34,7 +34,9 @@ import { HardSoftSkillsComponent } from './componentes/portafolio/hard-soft-skil
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgCircleProgressModule.forRoot({})
+    NgCircleProgressModule.forRoot({
+      
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
