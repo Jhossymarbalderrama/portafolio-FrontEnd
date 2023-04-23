@@ -1,0 +1,21 @@
+*{
+    font-family: monospace;
+}
+
+.container{
+	padding: 1em;
+}
+
+
+.registro{
+	cursor: pointer;
+	font-weight: bold;
+}
+
+.registro:hover{
+	color: white;
+}
+
+.btn{
+	font-weight: bold;
+}

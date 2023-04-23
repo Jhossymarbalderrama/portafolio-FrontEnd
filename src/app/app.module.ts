@@ -3,6 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 import { PortafolioComponent } from './componentes/portafolio/portafolio.component';
 import { HeaderComponent } from './componentes/header/header.component';
 import { FooterComponent } from './componentes/footer/footer.component';
@@ -20,6 +23,8 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProyectoComponent } from './componentes/portafolio/proyecto/proyecto.component';
 import { LogoFooterComponent } from './componentes/footer/logo-footer/logo-footer.component';
 import { SocialFooterComponent } from './componentes/footer/social-footer/social-footer.component';
+import { CardLoginComponent } from './componentes/login/card-login/card-login.component';
+import { CardRegistroComponent } from './componentes/registro/card-registro/card-registro.component';
 
 @NgModule({
   declarations: [
@@ -32,14 +37,17 @@ import { SocialFooterComponent } from './componentes/footer/social-footer/social
     SocialComponent, 
     LogoComponent, 
     BannerComponent, 
-    AcercaDeComponent, ExperienciaComponent, EducacionComponent, HardSoftSkillsComponent, ProyectoComponent, LogoFooterComponent, SocialFooterComponent    
+    AcercaDeComponent, ExperienciaComponent, EducacionComponent, HardSoftSkillsComponent, ProyectoComponent, LogoFooterComponent, SocialFooterComponent, CardLoginComponent, CardRegistroComponent    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     NgCircleProgressModule.forRoot({
       
-    })
+    }),
+    HttpClientModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

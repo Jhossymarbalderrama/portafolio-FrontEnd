@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit, } from '@angular/core';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-social',
   templateUrl: './social.component.html',
@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SocialComponent implements OnInit {
 
-  constructor() { }
+
+  constructor(
+    private Router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
+  onLogin():void{
+    this.Router.navigateByUrl('login');
+  }
 }

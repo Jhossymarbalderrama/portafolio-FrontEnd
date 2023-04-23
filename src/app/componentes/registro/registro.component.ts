@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from 'src/app/servicios/usuarios.service';
 
 @Component({
   selector: 'app-registro',
@@ -7,9 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegistroComponent implements OnInit {
 
-  constructor() { }
+  bannerEstado: boolean = false;
+  listaUsuarios: any;
+  
+  constructor(
+    private UsuariosService: UsuariosService
+  ) { }
 
   ngOnInit(): void {
+    this.UsuariosService.getAll().subscribe(data => {
+      this.listaUsuarios = data;    
+      console.log(this.listaUsuarios);          
+    }); 
   }
 
 }

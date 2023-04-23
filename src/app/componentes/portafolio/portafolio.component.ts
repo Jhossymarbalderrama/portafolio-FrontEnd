@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UsuariosService } from 'src/app/servicios/usuarios.service';
 
 @Component({
   selector: 'app-portafolio',
@@ -7,7 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PortafolioComponent implements OnInit {
 
-  constructor() { }
+  bannerEstado: boolean = true;
+
+  constructor(
+  ) { }
 
   ngOnInit(): void {
   }

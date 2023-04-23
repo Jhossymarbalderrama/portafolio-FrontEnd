@@ -2,6 +2,9 @@
 .background{
     background-color: #000000e9;       
 }
+*{
+    font-family: monospace;
+}
 
 .row {
     margin:0px;

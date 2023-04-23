@@ -12,9 +12,9 @@ p{
     font-weight: 600;
 }
 
-.container{
-    margin-top: 8em;
-    margin-bottom: 2em;
+.container{    
+    padding-top: 8em;
+    padding-bottom: 2em;
 }
 
 @media (min-width:576px){
