@@ -1,5 +1,5 @@
 export class Persona {
-    private id: number;
+    private id?: number;
     private nombre: string;
     private apellido: string;
     private edad: number;
@@ -11,11 +11,10 @@ export class Persona {
     private url_banner_perfil: string;
     private url_foto_perfil: string;
 
-    constructor(id: number, nombre: string, apellido: string,
+    constructor(nombre: string, apellido: string,
         edad: number, telefono: number, celular: number,
         email: string, titulo: string, sobre_mi: string,
-        url_banner_perfil: string, url_foto_perfil: string) {
-        this.id = id;
+        url_banner_perfil: string, url_foto_perfil: string) {        
         this.nombre = nombre;
         this.apellido = apellido;
         this.edad = edad;
@@ -29,13 +28,6 @@ export class Persona {
     }
 
     
-    public getId() {
-        return this.id;
-    }
-    public setId(id: number) {
-        this.id = id;
-    }
-
     public getNombre() {
         return this.nombre;
     }

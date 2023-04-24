@@ -1,6 +1,6 @@
 export class Educacion {
 
-    private id : number;
+    private id?: number;
     private nombre_establecimiento: string;
     private titulo: string;
     private descripcion: string;
@@ -8,21 +8,15 @@ export class Educacion {
     private direccion: string;
     private url_logo : string;
 
-    constructor(id: number,nombre_establecimiento: string, titulo:string,
-                descripcion: string, aneos: number, direccion:string, url_logo: string) {
-        this.id = id;
+    constructor(nombre_establecimiento: string, titulo:string,
+                descripcion: string, aneos: number, direccion:string, url_logo: string) {        
         this.nombre_establecimiento = nombre_establecimiento;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.aneos = aneos;
         this.direccion = direccion;
         this.url_logo = url_logo;
-    }
-
-    
-    public getId(){
-        return this.id;
-    }
+    }       
 
     public getNombre_Establecimiento(){
         return this.nombre_establecimiento;
@@ -46,10 +40,6 @@ export class Educacion {
 
     public getUrl_Logo(){
         return this.url_logo;
-    }
-
-    public setId(id: any){
-        this.id = id;
     }
 
     public setNombre_Establecimiento(nombre_establecimiento: string){

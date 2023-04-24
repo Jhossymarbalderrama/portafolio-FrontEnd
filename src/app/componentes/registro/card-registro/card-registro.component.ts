@@ -38,15 +38,13 @@ export class CardRegistroComponent implements OnInit {
       this.formRegistro.get("password")?.value ==
       this.formRegistro.get("reingreso_pass")?.value){
         
-        // console.log("Formulario Validado");
-        // console.log("creando peticion de alta de usuario nuevo...");
+        console.log("Formulario Validado");
+        console.log("creando peticion de alta de usuario nuevo...");
 
-        //let usuario: Usuario = new Usuario("","");
+        let usuario: Usuario = new Usuario("","");
 
-        let usuario: any = {
-          usuario: this.formRegistro.get("email")?.value,
-          contraseña: this.formRegistro.get("password")?.value
-        }
+        usuario.setUsuario(this.formRegistro.get("email")?.value);
+        usuario.setPassword(this.formRegistro.get("password")?.value);
 
         //this.UsuariosService.create(usuario);
         this.UsuariosService.create(usuario).subscribe();

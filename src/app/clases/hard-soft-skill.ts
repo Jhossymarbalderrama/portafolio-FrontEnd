@@ -1,25 +1,16 @@
 export class HardSoftSkill {
-    private id: number;
+    private id?: number;
     private titulo: string;
     private detalle: string; 
     private porcentaje: number; //porcentaje de habilidad de skill 1 - 100 %
     private url_imagen: string;
 
 
-    constructor(id: number, titulo: string, detalle: string, porcentaje: number, url_imagen: string){
-        this.id = id;
+    constructor(titulo: string, detalle: string, porcentaje: number, url_imagen: string){    
         this.titulo = titulo;
         this.detalle = detalle;
         this.porcentaje = porcentaje;
         this.url_imagen = url_imagen;        
-    }
-
-    public getId(){
-        return this.id;
-    }
-
-    public setId(id: any){
-        this.id = id;
     }
 
     public getTitulo(){

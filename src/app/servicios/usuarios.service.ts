@@ -20,13 +20,13 @@ export class UsuariosService {
   }
 
   //Traer Usuario
-  getUsuario(id:number):Observable<any>{
-    return this.http.get<any>(this.url+"listar/"+id);
+  getUsuario(id:number):Observable<Usuario>{
+    return this.http.get<Usuario>(this.url+"listar/"+id);
   }
 
   //Alta 
-  create(usuario: any): Observable<any>{
-    return this.http.post<any>(this.url+"alta", usuario);
+  create(usuario: Usuario): Observable<Usuario>{
+    return this.http.post<Usuario>(this.url+"alta", usuario);
   }
 
   //Baja

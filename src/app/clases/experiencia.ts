@@ -1,29 +1,19 @@
 export class Experiencia {
-    private id: number;
+    private id?: number;
     private nombre_empresa: string;
     private descripcion: string;
     private aneos: string;
     private direccion: string;
     private url_logo: string;
 
-    constructor(id: number, nombre_empresa: string,
+    constructor(nombre_empresa: string,
                 descripcion: string, aneos: string,
                 direccion: string, url_logo: string) {
-        this.id = id;
         this.nombre_empresa = nombre_empresa;
         this.descripcion = descripcion;
         this.aneos = aneos;
         this.direccion = direccion;
         this.url_logo = url_logo;
-    }
-
-    
-    public getId(){
-        return this.id;
-    }
-
-    public setId(id: any){
-        this.id = id;
     }
 
     public getNombre_Empresa(){

@@ -1,6 +1,8 @@
 export class Usuario {
+    private id?: number;
     private usuario: string;
     private contraseña: string;
+    private id_persona?: number;
 
     constructor(usuario: string, contraseña: string){
         this.usuario = usuario;
