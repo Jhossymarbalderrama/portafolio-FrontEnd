@@ -65,3 +65,37 @@ p{
     font-weight: 600;
     margin-bottom: 3em;
 }
+
+.icon{
+    cursor: pointer;
+    font-size: 28px;  
+    background-color: orange;
+  
+    border-radius: 100%;
+  }
+  
+  .icon > .icon-style{
+    
+    color: white;
+  }
+
+  .btn-edit{
+    position: absolute;  
+    min-width: 42px;
+    min-height: 42px;
+  
+    z-index: 999;
+  }
+  
+  .btn-edit:hover{
+    transform: scale(1.1);
+  }
+  
+  .btn-edit:active{
+    transform: scale(0.9);
+  }
+
+  .btn-edit-perfil{    
+    margin-top: 3.8em;     
+    margin-left: 3.8em;
+  }

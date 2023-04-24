@@ -26,6 +26,8 @@ import { SocialFooterComponent } from './componentes/footer/social-footer/social
 import { CardLoginComponent } from './componentes/login/card-login/card-login.component';
 import { CardRegistroComponent } from './componentes/registro/card-registro/card-registro.component';
 
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +46,7 @@ import { CardRegistroComponent } from './componentes/registro/card-registro/card
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    FontAwesomeModule,
     NgCircleProgressModule.forRoot({
       
     }),

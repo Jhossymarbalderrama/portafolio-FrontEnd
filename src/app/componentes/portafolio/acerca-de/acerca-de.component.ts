@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+//import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { faEdit } from '@fortawesome/free-regular-svg-icons';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -7,7 +10,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcercaDeComponent implements OnInit {
 
-  constructor() { }
+  faEdit: any = faEdit;
+
+  constructor(
+    public AuthService:AuthService
+  ) { }
 
   ngOnInit(): void {
   }

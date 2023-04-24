@@ -4,6 +4,9 @@
         <div class="col-md-4">
             <div class="perfil" align="center">
                 <div>
+                    <div *ngIf="AuthService.logeado != null" class="btn-edit-perfil btn-edit icon" align="center">
+                        <fa-icon [icon]="faEdit" class="icon-style"></fa-icon>                                   
+                    </div>                
                     <div>
                         <img src="../../../assets/img/material/foto-perfil.jpg" alt="" width="120%" height="120%"
                             class="perfil_foto">
