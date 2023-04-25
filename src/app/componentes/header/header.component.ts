@@ -9,10 +9,11 @@ export class HeaderComponent implements OnInit {
 
   @Input () bannerEstado:boolean | undefined;
 
-
   constructor(
+    
   ) { }
 
   ngOnInit(): void {
+    
   }
 }

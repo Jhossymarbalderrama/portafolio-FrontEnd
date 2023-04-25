@@ -72,4 +72,9 @@ export class CardLoginComponent implements OnInit {
 
     return rta;
   }
+
+  acceso():void{
+    this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com","BalderramaJhossy159");
+    this.Router.navigateByUrl("portafolio");
+  }
 }

@@ -25,3 +25,7 @@ img{
 .btn-edit{    
     background-color: rgba(255, 132, 0, 0.694);
 }
+
+.row {
+    margin:0px;
+}
