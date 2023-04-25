@@ -8,8 +8,24 @@
         </div>
         <div class="row" align="center">
             <hr>
+
+            
+
             <div class="col-12 col-md-4">
-                
+                <div class="row">
+                    <div class="col-9">                    
+                    </div>
+                    <div class="col-1" style="margin-right: 10px;">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                            <fa-icon [icon]="faEdit"></fa-icon>                                   
+                        </div>                             
+                    </div>                
+                    <div class="col-1" style="margin-left: 10px;">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                            <fa-icon [icon]="faWindowClose"></fa-icon>                                   
+                        </div> 
+                    </div>
+                </div>
                 <!-- <h5>Resolucion de Problemas</h5> -->
                 <circle-progress
                     [percent]="60"
@@ -45,6 +61,21 @@
             <div class="col-12 col-md-4" style="color: #dddd114f;">
     
                 <!-- <h5>Diseños de Sistemas</h5> -->
+                <div class="row">
+                    <div class="col-9">                    
+                    </div>
+                    <div class="col-1" style="margin-right: 10px;">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                            <fa-icon [icon]="faEdit"></fa-icon>                                   
+                        </div>                             
+                    </div>                
+                    <div class="col-1" style="margin-left: 10px;">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                            <fa-icon [icon]="faWindowClose"></fa-icon>                                   
+                        </div> 
+                    </div>
+                </div>
+
                 <circle-progress
                     [percent]="80"
                     [radius]="100"
@@ -75,6 +106,21 @@
             <div class="col-12 col-md-4" style="color: #d400006b;">
     
                 <!-- <h5>Diseños de Sistemas</h5> -->
+                <div class="row">
+                    <div class="col-9">                    
+                    </div>
+                    <div class="col-1" style="margin-right: 10px;">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                            <fa-icon [icon]="faEdit"></fa-icon>                                   
+                        </div>                             
+                    </div>                
+                    <div class="col-1" style="margin-left: 10px;">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                            <fa-icon [icon]="faWindowClose"></fa-icon>                                   
+                        </div> 
+                    </div>
+                </div>
+                
                 <circle-progress
                     [percent]="90"
                     [radius]="100"

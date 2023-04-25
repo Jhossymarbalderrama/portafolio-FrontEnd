@@ -1,3 +1,13 @@
 <div>
+    <div class="row">
+        <div class="col-10">                    
+        </div>
+        <div class="col-1" style="margin-right: 10px;" align="right">
+            <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                <fa-icon [icon]="faEdit"></fa-icon>                                   
+            </div>                             
+        </div>                
+    </div>
+
     <img src="../../../../assets/img/fondos/fondo-perfil.jpg" alt="">
 </div>

@@ -66,20 +66,57 @@ p{
     margin-bottom: 3em;
 }
 
-.icon{
+/* Stylos botones de edicion y exit */
+.btn{
+    cursor: pointer;
+    color: rgba(28, 28, 28, 0.818);
+    font-size: 26px;        
+    border-radius: 100%;          
+}
+
+.btn:hover{
+    transform: scale(1.1);
+}
+  
+.btn:active{
+    transform: scale(0.9);
+}
+
+.btn-edit{    
+    background-color: rgba(255, 132, 0, 0.694);
+}
+
+.btn-clos{   
+    background-color: rgba(255, 19, 2, 0.761); 
+}
+
+.btn-edit-foto-perfil{  
+    position: absolute;  
+    margin-top: 3.5em;     
+    margin-left: -2px;
+  }
+
+.btn-edit-titulo-perfil{
+    margin-top: -0.5em;     
+    margin-left: 7em; 
+}
+
+/* .icon{
     cursor: pointer;
     font-size: 28px;  
-    background-color: orange;
+    
   
-    border-radius: 100%;
+    border-radius: 90%;
   }
   
   .icon > .icon-style{
-    
-    color: white;
+      text-align: center;
+      align-items: center;      
+    color: rgba(28, 28, 28, 0.818);    
   }
 
-  .btn-edit{
+  .btn-edit{    
+    background-color: rgba(255, 132, 0, 0.694);
     position: absolute;  
     min-width: 42px;
     min-height: 42px;
@@ -95,7 +132,37 @@ p{
     transform: scale(0.9);
   }
 
-  .btn-edit-perfil{    
-    margin-top: 3.8em;     
-    margin-left: 3.8em;
+  .btn-clos{   
+    background-color: rgba(255, 19, 2, 0.761); 
+    position: absolute;  
+    min-width: 42px;
+    min-height: 42px;
+    
+    z-index: 999;
   }
+  
+  .btn-clos:hover{
+    transform: scale(1.1);
+  }
+  
+  .btn-clos:active{
+    transform: scale(0.9);
+  }
+
+  .btn-edit-foto-perfil{    
+    margin-top: 3.5em;     
+    margin-left: 3.5em;
+  }
+
+  .btn-edit-titulo-perfil{
+    margin-top: -0.5em;     
+    margin-left: 7em; 
+  }
+
+  .btn-edit-acerca-de-mi{  
+    margin-top: -0.5em;    
+  }
+
+  .btn-close-acerca-de-mi{
+    margin-top: -0.5em;         
+  } */

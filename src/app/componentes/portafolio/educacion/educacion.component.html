@@ -9,6 +9,22 @@
         <!-- Experiencias -->
         <div class="row py-2">
             <hr>
+
+            <div class="row">
+                <div class="col-9">                    
+                </div>
+                <div class="col-1" style="margin-right: 10px;">
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                        <fa-icon [icon]="faEdit"></fa-icon>                                   
+                    </div>                             
+                </div>                
+                <div class="col-1" style="margin-left: 10px;">
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                        <fa-icon [icon]="faWindowClose"></fa-icon>                                   
+                    </div> 
+                </div>
+            </div>
+            
             <div class="col-md-5" align="center">
                 <div class="py-3">                   
                     <div class="row_foto_educacion">

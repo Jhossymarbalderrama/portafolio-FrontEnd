@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -7,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ExperienciaComponent implements OnInit {
 
-  constructor() { }
+  faEdit: any = faEdit;
+  faWindowClose: any = faTimesCircle;
+
+  constructor(
+    public AuthService:AuthService
+  ) { }
 
   ngOnInit(): void {
   }
