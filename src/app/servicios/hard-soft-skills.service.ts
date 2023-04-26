@@ -8,7 +8,7 @@ import { HardSoftSkill } from '../clases/hard-soft-skill';
 })
 export class HardSoftSkillsService {
 
-  private url: string = "http://localhost:8080/api/hardsoftskills/";
+  private url: string = "http://localhost:8080/api/hss/";
 
   constructor(
     private http: HttpClient

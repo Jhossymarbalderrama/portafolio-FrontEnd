@@ -3,6 +3,19 @@
     color: #494949;
 }
 
+app-edit-educacion, app-modal-borrar-seccion{  
+    width: 100%;
+      height: 100%;
+      
+      
+      background: url("../../../../assets/img/fondos/patternWhite.jpg")
+       ;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
+  
 h2{
     font-weight: 600;
 }

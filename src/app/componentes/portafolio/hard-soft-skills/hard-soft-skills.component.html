@@ -9,55 +9,7 @@
 
         <div class="row" align="center">
             <hr>
-            <div class="col-12 col-md-4">
-                <div class="row">
-                    <div class="col-9">                    
-                    </div>
-                    <div class="col-1" style="margin-right: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalHss)"  align="center">
-                            <fa-icon [icon]="faEdit"></fa-icon>                                   
-                        </div>                             
-                    </div>                
-                    <div class="col-1" style="margin-left: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
-                            <fa-icon [icon]="faWindowClose"></fa-icon>                                   
-                        </div> 
-                    </div>
-                </div>
-                <!-- <h5>Resolucion de Problemas</h5> -->
-                <circle-progress
-                    [percent]="60"
-                    [radius]="100"
-                    [showUnits]="true"  
-                    
-                    
-                    [showImage]="true"
-                    [imageSrc]="'../../../../assets/img/iconos/CSS.png'"                
-                    [imageHeight]="100"
-                    [imageWidth]="100"
-
-                    [titleColor]="'black'"
-                    [titleFontSize]="'2em'"
-                    [titleFontWeight]="'bold'"
-
-                    [showSubtitle]="true" 
-                    [subtitle]="'Resolucion de Problemas'"
-                    [subtitleColor]="'black'"
-                    [subtitleFontSize]="'0.8em'"
-                    [subtitleFontWeight]="'bold'"
-
-                    [outerStrokeWidth]="16"
-                    [innerStrokeWidth]="8"
-                    [outerStrokeColor]="'#0d4ebf'"
-                    [innerStrokeColor]="'#0d4ebf68'"
-                    [animation]="true"
-                    [animationDuration]="600"
-                ></circle-progress>                            
-            </div>
-    
-            <div class="col-12 col-md-4" style="color: #dddd114f;">
-    
-                <!-- <h5>Diseños de Sistemas</h5> -->
+            <div class="col-12 col-md-4" *ngFor="let hss of this.hssPersona">
                 <div class="row">
                     <div class="col-9">                    
                     </div>
@@ -73,77 +25,32 @@
                     </div>
                 </div>
 
-                <circle-progress
-                    [percent]="80"
-                    [radius]="100"
-                    [showUnits]="true"  
-
-                    [showImage]="true"
-                    [imageSrc]="'../../../../assets/img/iconos/js.png'"                
-                    [imageHeight]="100"
-                    [imageWidth]="100"
-
-                    [titleColor]="'black'"
-                    [titleFontSize]="'2em'"
-                    [titleFontWeight]="'bold'"
-                    [showSubtitle]="true" 
-                    [subtitle]="'Diseños de Sistemas'"
-                    [subtitleColor]="'black'"
-                    [subtitleFontSize]="'0.8em'"
-                    [subtitleFontWeight]="'bold'"
-                    [outerStrokeWidth]="16"
-                    [innerStrokeWidth]="8"
-                    [outerStrokeColor]="'#DDDD11'"
-                    [innerStrokeColor]="'#dddd114f'"
-                    [animation]="true"
-                    [animationDuration]="600"
-                ></circle-progress>
-            </div>   
-            
-            <div class="col-12 col-md-4" style="color: #d400006b;">
-    
-                <!-- <h5>Diseños de Sistemas</h5> -->
-                <div class="row">
-                    <div class="col-9">                    
-                    </div>
-                    <div class="col-1" style="margin-right: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalHss)" align="center">
-                            <fa-icon [icon]="faEdit"></fa-icon>                                   
-                        </div>                             
-                    </div>                
-                    <div class="col-1" style="margin-left: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
-                            <fa-icon [icon]="faWindowClose"></fa-icon>                                   
-                        </div> 
-                    </div>
-                </div>
+                <h4><strong>{{hss.titulo}}</strong></h4>
                 
                 <circle-progress
-                    [percent]="90"
-                    [radius]="100"
-                    [showUnits]="true"  
-
-                    [showImage]="true"
-                    [imageSrc]="'../../../../assets/img/iconos/html.png'"                
-                    [imageHeight]="100"
-                    [imageWidth]="100"
-
-                    [titleColor]="'black'"
-                    [titleFontSize]="'2em'"
-                    [titleFontWeight]="'bold'"
-                    [showSubtitle]="true" 
-                    [subtitle]="'Trabajo en Equipo'"
-                    [subtitleColor]="'black'"
-                    [subtitleFontSize]="'0.8em'"
-                    [subtitleFontWeight]="'bold'"
-                    [outerStrokeWidth]="16"
-                    [innerStrokeWidth]="8"
-                    [outerStrokeColor]="'#D40000'"
-                    [innerStrokeColor]="'#d400006b'"
-                    [animation]="true"
-                    [animationDuration]="600"
-                ></circle-progress>
-            </div>
+                [percent]="hss.porcentaje"
+                [radius]="100"
+                [showUnits]="true"  
+                
+                [showTitle]="true"
+                [titleColor]="'black'"
+                [titleFontSize]="'2.5em'"
+                [titleFontWeight]="'bold'"
+              
+                [showSubtitle]="true" 
+                [subtitle]="hss?.detalle"
+                [subtitleColor]="'black'"
+                [subtitleFontSize]="'0.8em'"
+                [subtitleFontWeight]="'bold'"
+              
+                [outerStrokeWidth]="16"
+                [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#00e408af'"
+                [innerStrokeColor]="'#22d028af'"
+                [animation]="true"
+                [animationDuration]="600"
+                ></circle-progress>                            
+            </div>              
             
 
             <ng-template #modalHss let-modal>
@@ -164,3 +71,32 @@
         </div>
     </div>
 </div>
+
+<!-- [percent]="hss.porcentaje"
+                [radius]="100"
+                [showUnits]="true"  
+                
+                [showImage]="true"
+                [imageSrc]="hss?.url_imagen"              
+                [imageHeight]="100"
+                [imageWidth]="100"
+              
+                [title]='hss?.titulo'
+                
+                [showTitle]="true"
+                [titleColor]="'black'"
+                [titleFontSize]="'2.5em'"
+                [titleFontWeight]="'bold'"
+              
+                [showSubtitle]="true" 
+                [subtitle]="hss?.detalle"
+                [subtitleColor]="'black'"
+                [subtitleFontSize]="'0.8em'"
+                [subtitleFontWeight]="'bold'"
+              
+                [outerStrokeWidth]="16"
+                [innerStrokeWidth]="8"
+                [outerStrokeColor]="'#0d4ebf'"
+                [innerStrokeColor]="'#0d4ebf68'"
+                [animation]="true"
+                [animationDuration]="600" -->

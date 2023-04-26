@@ -1,5 +1,5 @@
 <div class="modal-body">
-    <h2>Experiencia Laboral</h2>
+    <h2>Hard Soft Skills</h2>
     <form>
         <div class="row g-3">
 
@@ -16,15 +16,15 @@
             </div>
             
             <div class="col-md-12">
-                <label for="customRange2" class="form-label">Porcentaje (0% - 100%)</label>
+                <label for="customRange2" class="form-label">Porcentaje (<a style="color: #1C4B9B;font-weight: bold;">{{this.porcentaje}}% - 100%)</a></label>
                 <input type="range" class="form-range" min="0" max="100" step="5" value="0" id="porcentaje" (change)="captureRange()">                
             </div>
 
-            <div class="col-md-12">
+            <!-- <div class="col-md-12">
                 <label for="lastName">Imagen</label>
                 <input type="text" class="form-control" [(ngModel)]="url_imagen" name="url_imagen" id="url_imagen"
                     placeholder="Subir una Imagen">
-            </div>
+            </div> -->
         </div>
 
         <div class="row" align="center">

@@ -7,6 +7,18 @@ h2{
     font-weight: 600;
 }
 
+app-edit-hss, app-modal-borrar-seccion{  
+    width: 100%;
+      height: 100%;
+      
+      
+      background: url("../../../../assets/img/fondos/patternWhite.jpg")
+       ;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+}
 .container_hss{     
     padding: 1em;
     background-color: #00348e2b;

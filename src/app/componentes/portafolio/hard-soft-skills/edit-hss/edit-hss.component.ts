@@ -10,7 +10,7 @@ export class EditHssComponent implements OnInit {
   titulo: string = "";
   detalle: string = "";
   porcentaje: string = "";
-  url_imagen: string = "";
+  // url_imagen: string = "";
 
   constructor() { }
 
