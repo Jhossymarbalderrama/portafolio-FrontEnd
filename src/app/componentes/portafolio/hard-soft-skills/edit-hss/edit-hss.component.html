@@ -1,0 +1,36 @@
+<div class="modal-body">
+    <h2>Experiencia Laboral</h2>
+    <form>
+        <div class="row g-3">
+
+            <div class="col-md-12">
+                <label for="title">Titulo</label>
+                <input type="text" class="form-control" [(ngModel)]="titulo" name="titulo" id="titulo"
+                    placeholder="Ingrese un titulo">
+            </div>
+
+            <div class="col-md-12">
+                <label for="firstName">Detalle</label>
+                <input type="text" class="form-control" [(ngModel)]="detalle" name="detalle" id="detalle"
+                    placeholder="Ingrese un detalle">
+            </div>
+            
+            <div class="col-md-12">
+                <label for="customRange2" class="form-label">Porcentaje (0% - 100%)</label>
+                <input type="range" class="form-range" min="0" max="100" step="5" value="0" id="porcentaje" (change)="captureRange()">                
+            </div>
+
+            <div class="col-md-12">
+                <label for="lastName">Imagen</label>
+                <input type="text" class="form-control" [(ngModel)]="url_imagen" name="url_imagen" id="url_imagen"
+                    placeholder="Subir una Imagen">
+            </div>
+        </div>
+
+        <div class="row" align="center">
+            <div class="pt-4">
+                <button type="submit" class="btn btn-primary btn-block w-50">Modificar</button>
+            </div>
+        </div>
+    </form>
+</div>

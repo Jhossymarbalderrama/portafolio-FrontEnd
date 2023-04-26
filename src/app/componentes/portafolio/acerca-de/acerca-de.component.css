@@ -1,6 +1,6 @@
 *{
     font-family: monospace;
-    color: #393939;
+    color: #393939;     
 }
 
 h2{
@@ -11,6 +11,11 @@ p{
     font-size: 18px;
     font-weight: 600;
 }
+
+ng-template{
+  background-color: rgba(19, 89, 240, 0.487) !important;
+}
+
 
 .container{    
     padding-top: 8em;
@@ -40,6 +45,14 @@ p{
     z-index: 4;
     border-radius: 100%;
     border: 7px solid white;
+
+   
+}
+
+.foto-perfil{
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+  user-select: none;   
 }
 
 .perfil_info{    
@@ -67,18 +80,18 @@ p{
 }
 
 /* Stylos botones de edicion y exit */
-.btn{
+.btn-icon{
     cursor: pointer;
     color: rgba(28, 28, 28, 0.818);
     font-size: 26px;        
     border-radius: 100%;          
 }
 
-.btn:hover{
+.btn-icon:hover{
     transform: scale(1.1);
 }
   
-.btn:active{
+.btn-icon:active{
     transform: scale(0.9);
 }
 

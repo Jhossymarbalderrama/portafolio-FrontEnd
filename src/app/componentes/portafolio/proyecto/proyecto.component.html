@@ -1,5 +1,5 @@
         
-<div>
+<div class="p-3">
     <div class="container">
         <div class="row">
             <h2>Proyectos</h2>
@@ -7,19 +7,19 @@
 
 
         <!-- Experiencias -->
-        <div class="row py-2">
+        <div class="row py-2" *ngFor="let proyecto of this.proyectosPersona">
             <hr>
 
             <div class="row">
                 <div class="col-9">                    
                 </div>
                 <div class="col-1" style="margin-right: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalProyecto)" align="center">
                         <fa-icon [icon]="faEdit"></fa-icon>                                   
                     </div>                             
                 </div>                
                 <div class="col-1" style="margin-left: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
                         <fa-icon [icon]="faWindowClose"></fa-icon>                                   
                     </div> 
                 </div>
@@ -27,18 +27,34 @@
             
             <div class="col-12 col-md-8">
                 <div>
-                    <h3 style="font-weight: bold;">Clinica Online</h3>
+                    <h3 style="font-weight: bold;">{{proyecto?.nombre_proyecto}}</h3>
                     <p>
-                        Pagina web para una Clinica que esta hecho con el framework Angular, que cuenta con un sistema de turnos online.
+                        {{proyecto?.descripcion}}
                     </p>
 
                     <p>
-                        Desarrollado con Angular y Firebase.
+                        {{proyecto?.sistema}}
                     </p>
 
                 </div>
-            </div>
+            </div>            
         </div>
+
+        <ng-template #modalProyecto let-modal>
+            <div class="modal-header">
+                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            </div>
+        
+            <app-edit-proyecto></app-edit-proyecto>
+        </ng-template>
+
+        <ng-template #modalDelete let-modal>
+            <div class="modal-header">
+                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            </div>
+        
+            <app-modal-borrar-seccion></app-modal-borrar-seccion>
+        </ng-template>
 
 
     </div>

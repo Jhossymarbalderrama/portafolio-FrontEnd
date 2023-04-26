@@ -74,7 +74,7 @@ export class CardLoginComponent implements OnInit {
   }
 
   acceso():void{
-    this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com","BalderramaJhossy159");
+    this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com","BalderramaJhossy159",1);
     this.Router.navigateByUrl("portafolio");
   }
 }

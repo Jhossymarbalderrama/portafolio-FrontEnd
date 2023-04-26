@@ -6,22 +6,20 @@
         <div class="row container_titulo">
             <h2>Hard Skills & Soft Skills</h2>
         </div>
+
         <div class="row" align="center">
             <hr>
-
-            
-
             <div class="col-12 col-md-4">
                 <div class="row">
                     <div class="col-9">                    
                     </div>
                     <div class="col-1" style="margin-right: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalHss)"  align="center">
                             <fa-icon [icon]="faEdit"></fa-icon>                                   
                         </div>                             
                     </div>                
                     <div class="col-1" style="margin-left: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
                             <fa-icon [icon]="faWindowClose"></fa-icon>                                   
                         </div> 
                     </div>
@@ -54,8 +52,7 @@
                     [innerStrokeColor]="'#0d4ebf68'"
                     [animation]="true"
                     [animationDuration]="600"
-                ></circle-progress>
-                
+                ></circle-progress>                            
             </div>
     
             <div class="col-12 col-md-4" style="color: #dddd114f;">
@@ -65,12 +62,12 @@
                     <div class="col-9">                    
                     </div>
                     <div class="col-1" style="margin-right: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalHss)"  align="center">
                             <fa-icon [icon]="faEdit"></fa-icon>                                   
                         </div>                             
                     </div>                
                     <div class="col-1" style="margin-left: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
                             <fa-icon [icon]="faWindowClose"></fa-icon>                                   
                         </div> 
                     </div>
@@ -110,12 +107,12 @@
                     <div class="col-9">                    
                     </div>
                     <div class="col-1" style="margin-right: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalHss)" align="center">
                             <fa-icon [icon]="faEdit"></fa-icon>                                   
                         </div>                             
                     </div>                
                     <div class="col-1" style="margin-left: 10px;">
-                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                        <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
                             <fa-icon [icon]="faWindowClose"></fa-icon>                                   
                         </div> 
                     </div>
@@ -146,7 +143,24 @@
                     [animation]="true"
                     [animationDuration]="600"
                 ></circle-progress>
-            </div>       
+            </div>
+            
+
+            <ng-template #modalHss let-modal>
+                <div class="modal-header">
+                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                </div>
+            
+                <app-edit-hss></app-edit-hss>
+            </ng-template>
+
+            <ng-template #modalDelete let-modal>
+                <div class="modal-header">
+                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                </div>
+            
+                <app-modal-borrar-seccion></app-modal-borrar-seccion>
+            </ng-template>
         </div>
     </div>
 </div>

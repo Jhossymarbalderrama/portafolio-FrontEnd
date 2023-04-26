@@ -7,19 +7,19 @@
         </div>
 
         <!-- Experiencias -->
-        <div class="row py-2">
+        <div class="row py-2" *ngFor="let educacion of this.eduacionesPersona">
             <hr>
 
             <div class="row">
                 <div class="col-9">                    
                 </div>
                 <div class="col-1" style="margin-right: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalEducacion)" align="center">
                         <fa-icon [icon]="faEdit"></fa-icon>                                   
                     </div>                             
                 </div>                
                 <div class="col-1" style="margin-left: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
                         <fa-icon [icon]="faWindowClose"></fa-icon>                                   
                     </div> 
                 </div>
@@ -28,8 +28,8 @@
             <div class="col-md-5" align="center">
                 <div class="py-3">                   
                     <div class="row_foto_educacion">
-                        <div class="row_foto" align="center">
-                            <img src="../../../../assets/img/logo/EESTLogo.png"  width="150px" height="100px">
+                        <div class="row_foto" align="center">                            
+                            <img src="{{educacion?.url_logo}}"  width="150px" height="100px">
                         </div>
                     </div>
                 </div>
@@ -37,20 +37,34 @@
     
             <div class="col-12 col-md-7">
                 <div>
-                    <h3 style="font-weight: bold;">Escuela Secundaria Tecnica Nº1</h3>
+                    <h3 style="font-weight: bold;">{{educacion?.nombre_establecimiento}}</h3>
                     <p>
-                        Tecnico en Programacion
+                        {{educacion?.titulo}}
                     </p>
 
                     <p>
-                        Tecnico en Programacion 2010 - 2017 / Leandro Alem 1910, Dock Sud (Avellaneda) - Buenos Aires - Argentina
+                        {{educacion?.descripcion}} {{educacion?.aneos}} / {{educacion?.direccion}}
                     </p>
 
                 </div>
-            </div>
+            </div>           
         </div>
 
+        <ng-template #modalEducacion let-modal>
+            <div class="modal-header">
+                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            </div>
+        
+            <app-edit-educacion></app-edit-educacion>
+        </ng-template>
 
+        <ng-template #modalDelete let-modal>
+            <div class="modal-header">
+                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            </div>
+        
+            <app-modal-borrar-seccion></app-modal-borrar-seccion>
+        </ng-template>
     </div>
 </div>
 

@@ -4,6 +4,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { PersonasService } from 'src/app/servicios/personas.service';
 
 @Component({
   selector: 'app-acerca-de',
@@ -14,12 +16,35 @@ export class AcercaDeComponent implements OnInit {
 
   faEdit: any = faEdit;
   faWindowClose: any = faTimesCircle;
-  
+
+  persona: any;
+
   constructor(
-    public AuthService:AuthService
-  ) { }
+    public AuthService: AuthService,
+    private NgbModal: NgbModal,
+    private PersonasService: PersonasService
+  ) {
+
+    let id: any = this.AuthService.logeado.getId_persona();
+
+    this.PersonasService.getPersona(
+      id
+    ).subscribe(datos_persona => {
+      this.persona = datos_persona;
+      console.log(datos_persona);
+    })
+
+
+  }
 
   ngOnInit(): void {
   }
 
+  openModal(modal: any) {
+    this.NgbModal.open(modal, { centered: true });
+  }
+
+  modalClose() {
+    this.NgbModal.dismissAll();
+  }
 }

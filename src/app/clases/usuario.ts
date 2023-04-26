@@ -4,9 +4,10 @@ export class Usuario {
     private contraseña: string;
     private id_persona?: number;
 
-    constructor(usuario: string, contraseña: string){
+    constructor(usuario: string, contraseña: string, id_persona?: number){
         this.usuario = usuario;
         this.contraseña = contraseña;
+        this.id_persona = id_persona;
     }
 
     public getUsuario(): string{
@@ -23,5 +24,13 @@ export class Usuario {
 
     public setPassword(contraseña: string){
         this.contraseña = contraseña;
+    }
+
+    public getId_persona(){
+        return this.id_persona;
+    }
+
+    public setId_persona(id_persona: number){
+        this.id_persona = id_persona;
     }
 }

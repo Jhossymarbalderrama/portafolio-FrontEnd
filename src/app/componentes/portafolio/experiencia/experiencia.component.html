@@ -6,19 +6,19 @@
         </div>
 
         <!-- Experiencias -->
-        <div class="row ">                        
+        <div class="row " *ngFor="let experiencia of this.experienciaPersona">                        
             <hr>
 
             <div class="row">
                 <div class="col-9">                    
                 </div>
                 <div class="col-1" style="margin-right: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit" align="center">
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit"  (click)="openModal(modalExperiencia)" align="center">
                         <fa-icon [icon]="faEdit"></fa-icon>                                   
                     </div>                             
                 </div>                
                 <div class="col-1" style="margin-left: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" align="center">
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
                         <fa-icon [icon]="faWindowClose"></fa-icon>                                   
                     </div> 
                 </div>
@@ -28,7 +28,7 @@
                 <div class="py-3">                 
                     <div class="row_foto_experiencia">
                         <div class="row_foto" align="center">
-                            <img src="../../../../assets/img/logo/vlb.png"  width="150px" height="100px">
+                            <img src="{{experiencia?.url_logo}}"  width="150px" height="100px">                            
                         </div>
                     </div>
                 </div>
@@ -36,21 +36,37 @@
     
             <div class="col-12 col-md-7" >
                 <div>
-                    <h3 style="font-weight: bold;">CA-VLB s.a - Developer</h3>
+                    <h3 style="font-weight: bold;">{{experiencia?.nombre_empresa}}</h3>
                     <p>
-                        Genexus Evolution 2, 3
+                        {{experiencia?.descripcion}}
                     </p>
 
                     <p>
-                        2016 - 2019
+                        {{experiencia?.aneos}}
                     </p>
 
                     <p>
-                        Anatole France 123, Sarandi. Avellaneda - Bs As - Argentina
+                        {{experiencia?.direccion}}
                     </p>
                 </div>
+            </div>            
+        </div>    
+        
+        <ng-template #modalExperiencia let-modal>
+            <div class="modal-header">
+                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
             </div>
-        </div>          
+        
+            <app-edit-experiencia></app-edit-experiencia>
+        </ng-template>
+
+        <ng-template #modalDelete let-modal>
+            <div class="modal-header">
+                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+            </div>
+        
+            <app-modal-borrar-seccion></app-modal-borrar-seccion>
+        </ng-template>
     </div>
 </div>
 

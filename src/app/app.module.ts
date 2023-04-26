@@ -27,6 +27,16 @@ import { CardLoginComponent } from './componentes/login/card-login/card-login.co
 import { CardRegistroComponent } from './componentes/registro/card-registro/card-registro.component';
 
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { EditAcercaDeComponent } from './componentes/portafolio/acerca-de/edit-acerca-de/edit-acerca-de.component';
+import { EditDescripcionComponent } from './componentes/portafolio/acerca-de/edit-descripcion/edit-descripcion.component';
+import { ModalBorrarSeccionComponent } from './componentes/portafolio/modal-borrar-seccion/modal-borrar-seccion.component';
+import { EditExperienciaComponent } from './componentes/portafolio/experiencia/edit-experiencia/edit-experiencia.component';
+import { EditEducacionComponent } from './componentes/portafolio/educacion/edit-educacion/edit-educacion.component';
+import { EditProyectoComponent } from './componentes/portafolio/proyecto/edit-proyecto/edit-proyecto.component';
+import { EditHssComponent } from './componentes/portafolio/hard-soft-skills/edit-hss/edit-hss.component';
+import { EditFotoPerfilComponent } from './componentes/portafolio/acerca-de/edit-foto-perfil/edit-foto-perfil.component';
+import { EditBannerComponent } from './componentes/header/banner/edit-banner/edit-banner.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +49,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SocialComponent, 
     LogoComponent, 
     BannerComponent, 
-    AcercaDeComponent, ExperienciaComponent, EducacionComponent, HardSoftSkillsComponent, ProyectoComponent, LogoFooterComponent, SocialFooterComponent, CardLoginComponent, CardRegistroComponent    
+    AcercaDeComponent, ExperienciaComponent, EducacionComponent, HardSoftSkillsComponent, ProyectoComponent, LogoFooterComponent, SocialFooterComponent, CardLoginComponent, CardRegistroComponent, EditAcercaDeComponent, EditDescripcionComponent, ModalBorrarSeccionComponent, EditExperienciaComponent, EditEducacionComponent, EditProyectoComponent, EditHssComponent, EditFotoPerfilComponent, EditBannerComponent    
   ],
   imports: [
     BrowserModule,
@@ -50,7 +60,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     NgCircleProgressModule.forRoot({
       
     }),
-    HttpClientModule 
+    HttpClientModule,
+    NgbModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

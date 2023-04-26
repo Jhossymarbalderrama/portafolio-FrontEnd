@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ExperienciasService } from 'src/app/servicios/experiencias.service';
 
 @Component({
   selector: 'app-experiencia',
@@ -13,11 +15,43 @@ export class ExperienciaComponent implements OnInit {
   faEdit: any = faEdit;
   faWindowClose: any = faTimesCircle;
 
+  experiencias: any = [];
+  experienciaPersona: any = [];
+
   constructor(
-    public AuthService:AuthService
-  ) { }
+    public AuthService: AuthService,
+    private NgbModal: NgbModal,
+    private ExperienciasService: ExperienciasService
+  ) {
+    let id: any = this.AuthService.logeado.getId_persona();
+
+    this.ExperienciasService.getAll().subscribe( datos => {
+      console.log(datos);
+      this.experiencias = datos;
+      this.getExperienciaXpersona();      
+    });
+  }
 
   ngOnInit(): void {
   }
 
+  openModal(modal: any) {
+    this.NgbModal.open(modal, { centered: true });
+  }
+
+  modalClose() {
+    this.NgbModal.dismissAll();
+  }
+
+
+  getExperienciaXpersona():void{
+    for (const exp of this.experiencias) {
+      if(exp.id_usuario == this.AuthService.logeado.getId_persona()){
+        this.experienciaPersona.push(exp);
+      }
+    }
+
+    console.log("Experiencias de la persona con ID: " + this.AuthService.logeado.getId_persona());
+    console.log(this.experienciaPersona);
+  }
 }
