@@ -71,7 +71,7 @@
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
 
-    <app-edit-acerca-de></app-edit-acerca-de>
+    <app-edit-acerca-de [persona]='this.persona'></app-edit-acerca-de>
 </ng-template>
 
 <ng-template #modalDescripcion let-modal>
@@ -79,7 +79,7 @@
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
 
-    <app-edit-descripcion></app-edit-descripcion>
+    <app-edit-descripcion [persona]='this.persona'></app-edit-descripcion>
 </ng-template>
 
 <ng-template #modalDelete let-modal>

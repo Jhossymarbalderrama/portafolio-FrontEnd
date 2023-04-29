@@ -26,7 +26,6 @@ export class EducacionComponent implements OnInit {
     let id: any = this.AuthService.logeado.getId_persona();
 
     this.EducacionesService.getAll().subscribe( datos => {
-      console.log(datos);
       this.eduaciones = datos;
       this.getEducacionsXpersona();      
     });
@@ -49,8 +48,5 @@ export class EducacionComponent implements OnInit {
         this.eduacionesPersona.push(edu);
       }
     }
-
-    console.log("Educaciones de la persona con ID: " + this.AuthService.logeado.getId_persona());
-    console.log(this.eduacionesPersona);
   }
 }

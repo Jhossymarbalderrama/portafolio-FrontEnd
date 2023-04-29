@@ -1,30 +1,30 @@
 <div class="modal-body">
     <h2>Datos Perfil</h2>
-    <form>
+    <form [formGroup]="formPersona" (submit)="onUpdatePersona()">
         <div class="row g-3">
 
             <div class="col-md-12">
                 <label for="title">Titulo</label>
-                <input type="text" class="form-control" [(ngModel)]="titulo" name="titulo" id="titulo"
-                    placeholder="ingrese un titulo">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="titulo" name="titulo" id="titulo"
+                formControlName="titulo" placeholder="ingrese un titulo">                     
             </div>
 
             <div class="col-md-12">
                 <label for="firstName">Nombre/s</label>
-                <input type="text" class="form-control" [(ngModel)]="nombre" name="nombre" id="nombre"
-                    placeholder="ingrese su nombre">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="nombre" name="nombre" id="nombre"
+                    formControlName="nombre" placeholder="ingrese su nombre">
             </div>
 
             <div class="col-md-12">
                 <label for="lastName">Apellido/s</label>
-                <input type="text" class="form-control" [(ngModel)]="apellido" name="apellido" id="apellido"
-                    placeholder="ingrese su apellido/s">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="apellido" name="apellido" id="apellido"
+                    formControlName="apellido" placeholder="ingrese su apellido/s">
             </div>
         </div>
 
         <div class="row" align="center">
             <div class="pt-4">
-                <button type="submit" class="btn btn-primary btn-block w-50">Modificar</button>
+                <button type="submit" class="btn btn-primary btn-block w-50" [disabled]="formPersona.invalid">Modificar</button>
             </div>
         </div>
     </form>

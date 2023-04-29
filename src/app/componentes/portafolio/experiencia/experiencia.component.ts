@@ -26,7 +26,6 @@ export class ExperienciaComponent implements OnInit {
     let id: any = this.AuthService.logeado.getId_persona();
 
     this.ExperienciasService.getAll().subscribe( datos => {
-      console.log(datos);
       this.experiencias = datos;
       this.getExperienciaXpersona();      
     });
@@ -50,8 +49,5 @@ export class ExperienciaComponent implements OnInit {
         this.experienciaPersona.push(exp);
       }
     }
-
-    console.log("Experiencias de la persona con ID: " + this.AuthService.logeado.getId_persona());
-    console.log(this.experienciaPersona);
   }
 }

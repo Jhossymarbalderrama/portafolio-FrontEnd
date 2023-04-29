@@ -6,6 +6,7 @@ import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PersonasService } from 'src/app/servicios/personas.service';
+import { Persona } from 'src/app/clases/persona';
 
 @Component({
   selector: 'app-acerca-de',
@@ -31,7 +32,6 @@ export class AcercaDeComponent implements OnInit {
       id
     ).subscribe(datos_persona => {
       this.persona = datos_persona;
-      console.log(datos_persona);
     })
 
 
@@ -42,6 +42,7 @@ export class AcercaDeComponent implements OnInit {
 
   openModal(modal: any) {
     this.NgbModal.open(modal, { centered: true });
+    
   }
 
   modalClose() {

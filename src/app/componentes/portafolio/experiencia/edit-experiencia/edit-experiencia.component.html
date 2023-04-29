@@ -1,42 +1,42 @@
 <div class="modal-body">
     <h2>Experiencia Laboral</h2>
-    <form>
+    <form [formGroup]="formExperiencia" (submit)="onUpdateExperiencia()">
         <div class="row g-3">
 
             <div class="col-md-12">
                 <label for="title">Nombre Empresa</label>
-                <input type="text" class="form-control" [(ngModel)]="nombre_empresa" name="nombre_empresa" id="nombre_empresa"
-                    placeholder="Ingrese un nombre de Empresa">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="nombre_empresa" name="nombre_empresa" id="nombre_empresa"
+                    formControlName="nombre_empresa" placeholder="Ingrese un nombre de Empresa">
             </div>
 
             <div class="col-md-12">
                 <label for="firstName">Descripcion</label>
-                <input type="text" class="form-control" [(ngModel)]="descripcion" name="descripcion" id="descripcion"
-                    placeholder="Ingrese una Descripcion">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="descripcion" name="descripcion" id="descripcion"
+                    formControlName="descripcion" placeholder="Ingrese una Descripcion">
             </div>
 
             <div class="col-md-6">
                 <label for="lastName">Años</label>
-                <input type="text" class="form-control" [(ngModel)]="aneos" name="aneos" id="aneos"
-                    placeholder="Ingrese años de experiencia">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="aneos" name="aneos" id="aneos"
+                    formControlName="aneos" placeholder="Ingrese años de experiencia">
             </div>
 
             <div class="col-md-6">
                 <label for="lastName">Direccion/s</label>
-                <input type="text" class="form-control" [(ngModel)]="direccion" name="direccion" id="direccion"
-                    placeholder="Ingrese direccion">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="direccion" name="direccion" id="direccion"
+                    formControlName="direccion" placeholder="Ingrese direccion">
             </div>
 
             <div class="col-md-12">
                 <label for="lastName">Logo</label>
-                <input type="text" class="form-control" [(ngModel)]="url_logo" name="url_logo" id="url_logo"
-                    placeholder="Subir una Foto">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="url_logo" name="url_logo" id="url_logo"
+                    formControlName="url_logo" placeholder="Subir una Foto">
             </div>
         </div>
 
         <div class="row" align="center">
             <div class="pt-4">
-                <button type="submit" class="btn btn-primary btn-block w-50">Modificar</button>
+                <button type="submit" class="btn btn-primary btn-block w-50" [disabled]="formExperiencia.invalid">Modificar</button>
             </div>
         </div>
     </form>

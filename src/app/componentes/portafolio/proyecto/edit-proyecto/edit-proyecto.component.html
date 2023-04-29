@@ -1,30 +1,31 @@
 <div class="modal-body">
     <h2>Experiencia Laboral</h2>
-    <form>
+    <form [formGroup]="formProyecto" (submit)="onUpdateProyecto()">
         <div class="row g-3">
 
             <div class="col-md-12">
                 <label for="title">Nombre del Proyecto</label>
-                <input type="text" class="form-control" [(ngModel)]="nombre_proyecto" name="nombre_proyecto" id="nombre_proyecto"
-                    placeholder="Ingrese un nombre del proyecto">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="nombre_proyecto" name="nombre_proyecto" id="nombre_proyecto"
+                    formControlName="nombre_proyecto" placeholder="Ingrese un nombre del proyecto">
             </div>
 
             <div class="col-md-12">
                 <label for="firstName">Descripcion</label>
-                <input type="text" class="form-control" [(ngModel)]="descripcion" name="descripcion" id="descripcion"
-                    placeholder="Ingrese una Descripcion">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="descripcion" name="descripcion" id="descripcion"
+                    formControlName="descripcion" placeholder="Ingrese una Descripcion">
             </div>
             
             <div class="col-md-12">
                 <label for="firstName">Sistema usado en proyecto</label>
-                <input type="text" class="form-control" [(ngModel)]="sistema" name="sistema" id="sistema"
-                    placeholder="Ingrese sistema usado en proyecto">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="sistema" name="sistema" id="sistema"
+                    formControlName="sistema" placeholder="Ingrese sistema usado en proyecto">
             </div>
         </div>
 
         <div class="row" align="center">
             <div class="pt-4">
-                <button type="submit" class="btn btn-primary btn-block w-50">Modificar</button>
+                <button *ngIf="this.estadoFormAlta" type="submit" class="btn btn-success btn-block w-50" [disabled]="formProyecto.invalid">Alta</button>
+                <button *ngIf="!this.estadoFormAlta" type="submit" class="btn btn-warning btn-block w-50" [disabled]="formProyecto.invalid">Modificar</button>
             </div>
         </div>
     </form>

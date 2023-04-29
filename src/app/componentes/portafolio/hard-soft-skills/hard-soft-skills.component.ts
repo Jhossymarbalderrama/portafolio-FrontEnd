@@ -26,7 +26,6 @@ export class HardSoftSkillsComponent implements OnInit {
     let id: any = this.AuthService.logeado.getId_persona();
 
     this.HardSoftSkillsService.getAll().subscribe( datos => {
-      console.log(datos);
       this.hss = datos;
       this.getHSSXpersona();      
     });
@@ -51,8 +50,5 @@ export class HardSoftSkillsComponent implements OnInit {
         this.hssPersona.push(exp);
       }
     }
-
-    console.log("Hard Soft Skills de la persona con ID: " + this.AuthService.logeado.getId_persona());
-    console.log(this.hssPersona);
   }
 }

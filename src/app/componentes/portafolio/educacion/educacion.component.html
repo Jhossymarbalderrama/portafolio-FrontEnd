@@ -47,24 +47,25 @@
                     </p>
 
                 </div>
-            </div>           
+            </div>       
+
+            <ng-template #modalEducacion let-modal>
+                <div class="modal-header">
+                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                </div>
+            
+                <app-edit-educacion [educacion]='educacion'></app-edit-educacion>
+            </ng-template>
+    
+            <ng-template #modalDelete let-modal>
+                <div class="modal-header">
+                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                </div>
+            
+                <app-modal-borrar-seccion></app-modal-borrar-seccion>
+            </ng-template>
         </div>
 
-        <ng-template #modalEducacion let-modal>
-            <div class="modal-header">
-                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-            </div>
-        
-            <app-edit-educacion></app-edit-educacion>
-        </ng-template>
-
-        <ng-template #modalDelete let-modal>
-            <div class="modal-header">
-                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-            </div>
-        
-            <app-modal-borrar-seccion></app-modal-borrar-seccion>
-        </ng-template>
     </div>
 </div>
 

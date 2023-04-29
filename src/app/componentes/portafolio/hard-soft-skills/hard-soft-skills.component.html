@@ -50,24 +50,23 @@
                 [animation]="true"
                 [animationDuration]="600"
                 ></circle-progress>                            
-            </div>              
-            
 
-            <ng-template #modalHss let-modal>
-                <div class="modal-header">
-                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-                </div>
-            
-                <app-edit-hss></app-edit-hss>
-            </ng-template>
-
-            <ng-template #modalDelete let-modal>
-                <div class="modal-header">
-                    <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-                </div>
-            
-                <app-modal-borrar-seccion></app-modal-borrar-seccion>
-            </ng-template>
+                <ng-template #modalHss let-modal>
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                    </div>
+                
+                    <app-edit-hss [hss]='hss'></app-edit-hss>
+                </ng-template>
+    
+                <ng-template #modalDelete let-modal>
+                    <div class="modal-header">
+                        <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+                    </div>
+                
+                    <app-modal-borrar-seccion></app-modal-borrar-seccion>
+                </ng-template>
+            </div>                                  
         </div>
     </div>
 </div>

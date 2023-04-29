@@ -3,11 +3,13 @@ export class Proyecto {
     private nombre_proyecto: string;
     private descripcion: string;
     private sistema: string;
+    private id_usuario?: number;
 
-    constructor(nombre_proyecto:string, descripcion: string, sistema: string){
+    constructor(nombre_proyecto:string, descripcion: string, sistema: string, id_usuario?: number){
         this.nombre_proyecto = nombre_proyecto;
         this.descripcion = descripcion;
         this.sistema = sistema;
+        this.id_usuario = id_usuario;
     }
 
     public getNombre_Proyecto(){

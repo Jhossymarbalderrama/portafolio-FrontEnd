@@ -1,48 +1,48 @@
 <div class="modal-body">
     <h2>Formacion Académica</h2>
-    <form>
+    <form [formGroup]="formEducacion" (submit)="onUpdatePersona()">
         <div class="row g-3">
 
             <div class="col-md-12">
                 <label for="title">Nombre Establecimiento</label>
-                <input type="text" class="form-control" [(ngModel)]="nombre_establecimiento" name="nombre_establecimiento" id="nombre_establecimiento"
-                    placeholder="Ingrese un nombre del establecimiento">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="nombre_establecimiento" name="nombre_establecimiento" id="nombre_establecimiento"
+                    formControlName="nombre_establecimiento" placeholder="Ingrese un nombre del establecimiento">
             </div>
 
             <div class="col-md-6">
                 <label for="firstName">Titulo</label>
-                <input type="text" class="form-control" [(ngModel)]="titulo" name="titulo" id="titulo"
-                    placeholder="Ingrese titulo">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="titulo" name="titulo" id="titulo"
+                    formControlName="titulo" placeholder="Ingrese titulo">
             </div>
 
             <div class="col-md-6">
                 <label for="lastName">descripcion</label>
-                <input type="text" class="form-control" [(ngModel)]="descripcion" name="descripcion" id="descripcion"
-                    placeholder="Ingrese una descripcion">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="descripcion" name="descripcion" id="descripcion"
+                    formControlName="descripcion" placeholder="Ingrese una descripcion">
             </div>
 
             <div class="col-md-6">
                 <label for="lastName">años</label>
-                <input type="text" class="form-control" [(ngModel)]="aneos" name="aneos" id="aneos"
-                    placeholder="Ingrese años">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="aneos" name="aneos" id="aneos"
+                    formControlName="aneos" placeholder="Ingrese años">
             </div>
 
             <div class="col-md-6">
                 <label for="lastName">direccion</label>
-                <input type="text" class="form-control" [(ngModel)]="direccion" name="direccion" id="direccion"
-                    placeholder="Ingrese direccion">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="direccion" name="direccion" id="direccion"
+                    formControlName="direccion" placeholder="Ingrese direccion">
             </div>
 
             <div class="col-md-12">
                 <label for="lastName">Logo</label>
-                <input type="text" class="form-control" [(ngModel)]="url_logo" name="url_logo" id="url_logo"
-                    placeholder="Subir una Foto">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="url_logo" name="url_logo" id="url_logo"
+                    formControlName="url_logo" placeholder="Subir una Foto">
             </div>
         </div>
 
         <div class="row" align="center">
             <div class="pt-4">
-                <button type="submit" class="btn btn-primary btn-block w-50">Modificar</button>
+                <button type="submit" class="btn btn-primary btn-block w-50" [disabled]="formEducacion.invalid">Modificar</button>
             </div>
         </div>
     </form>

@@ -11,9 +11,12 @@ export class ProyectosService {
 
   private url: string = "http://localhost:8080/api/proyectos/";
 
+  
+
   constructor(
     private http: HttpClient
   ) { }
+
 
   //Listar
   getAll(): Observable<Proyecto>{

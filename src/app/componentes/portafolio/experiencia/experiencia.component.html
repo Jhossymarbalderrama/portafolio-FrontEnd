@@ -1,40 +1,42 @@
-<div class="container_experiencias">     
-    <div class="container text-left py-4"> 
+<div class="container_experiencias">
+    <div class="container text-left py-4">
         <!-- Titulo Seccion -->
         <div class="row container_titulo">
             <h2>Experiencia Laboral</h2>
         </div>
 
         <!-- Experiencias -->
-        <div class="row " *ngFor="let experiencia of this.experienciaPersona">                        
+        <div class="row " *ngFor="let experiencia of this.experienciaPersona">
             <hr>
 
             <div class="row">
-                <div class="col-9">                    
+                <div class="col-9">
                 </div>
                 <div class="col-1" style="margin-right: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit"  (click)="openModal(modalExperiencia)" align="center">
-                        <fa-icon [icon]="faEdit"></fa-icon>                                   
-                    </div>                             
-                </div>                
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalExperiencia)"
+                        align="center">
+                        <fa-icon [icon]="faEdit"></fa-icon>
+                    </div>
+                </div>
                 <div class="col-1" style="margin-left: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
-                        <fa-icon [icon]="faWindowClose"></fa-icon>                                   
-                    </div> 
+                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)"
+                        align="center">
+                        <fa-icon [icon]="faWindowClose"></fa-icon>
+                    </div>
                 </div>
             </div>
-            
+
             <div class="col-md-5" align="right" style="padding-right: 8em;">
-                <div class="py-3">                 
+                <div class="py-3">
                     <div class="row_foto_experiencia">
                         <div class="row_foto" align="center">
-                            <img src="{{experiencia?.url_logo}}"  width="150px" height="100px">                            
+                            <img src="{{experiencia?.url_logo}}" width="150px" height="100px">
                         </div>
                     </div>
                 </div>
             </div>
-    
-            <div class="col-12 col-md-7" >
+
+            <div class="col-12 col-md-7">
                 <div>
                     <h3 style="font-weight: bold;">{{experiencia?.nombre_empresa}}</h3>
                     <p>
@@ -49,24 +51,26 @@
                         {{experiencia?.direccion}}
                     </p>
                 </div>
-            </div>            
-        </div>    
-        
-        <ng-template #modalExperiencia let-modal>
-            <div class="modal-header">
-                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
             </div>
-        
-            <app-edit-experiencia></app-edit-experiencia>
-        </ng-template>
 
-        <ng-template #modalDelete let-modal>
-            <div class="modal-header">
-                <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
-            </div>
-        
-            <app-modal-borrar-seccion></app-modal-borrar-seccion>
-        </ng-template>
+
+            <ng-template #modalExperiencia let-modal>
+                <div class="modal-header">
+                    <button type="button" class="btn-close" aria-label="Close"
+                        (click)="modal.dismiss('Cross click')"></button>
+                </div>
+
+                <app-edit-experiencia [experiencia]='experiencia'></app-edit-experiencia>
+            </ng-template>
+
+            <ng-template #modalDelete let-modal>
+                <div class="modal-header">
+                    <button type="button" class="btn-close" aria-label="Close"
+                        (click)="modal.dismiss('Cross click')"></button>
+                </div>
+
+                <app-modal-borrar-seccion></app-modal-borrar-seccion>
+            </ng-template>
+        </div>
     </div>
 </div>
-

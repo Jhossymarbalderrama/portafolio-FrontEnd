@@ -1,23 +1,23 @@
 <div class="modal-body">
     <h2>Hard Soft Skills</h2>
-    <form>
+    <form [formGroup]="formHSS" (submit)="onUpdateHSS()">
         <div class="row g-3">
 
             <div class="col-md-12">
                 <label for="title">Titulo</label>
-                <input type="text" class="form-control" [(ngModel)]="titulo" name="titulo" id="titulo"
-                    placeholder="Ingrese un titulo">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="titulo" name="titulo" id="titulo"
+                    formControlName="titulo" placeholder="Ingrese un titulo">
             </div>
 
             <div class="col-md-12">
                 <label for="firstName">Detalle</label>
-                <input type="text" class="form-control" [(ngModel)]="detalle" name="detalle" id="detalle"
-                    placeholder="Ingrese un detalle">
+                <input type="text" class="form-control form-control-lg" [(ngModel)]="detalle" name="detalle" id="detalle"
+                    formControlName="detalle" placeholder="Ingrese un detalle">
             </div>
             
             <div class="col-md-12">
-                <label for="customRange2" class="form-label">Porcentaje (<a style="color: #1C4B9B;font-weight: bold;">{{this.porcentaje}}% - 100%)</a></label>
-                <input type="range" class="form-range" min="0" max="100" step="5" value="0" id="porcentaje" (change)="captureRange()">                
+                <label for="customRange2" class="form-label form-control-lg">Porcentaje (<a style="color: #1C4B9B;font-weight: bold;">{{this.porcentaje}}% - 100%)</a></label>
+                <input formControlName="porcentaje" type="range" class="form-range" min="0" max="100" step="5" value="0" id="porcentaje" (change)="captureRange()">                
             </div>
 
             <!-- <div class="col-md-12">
@@ -29,7 +29,7 @@
 
         <div class="row" align="center">
             <div class="pt-4">
-                <button type="submit" class="btn btn-primary btn-block w-50">Modificar</button>
+                <button type="submit" class="btn btn-primary btn-block w-50" [disabled]="formHSS.invalid">Modificar</button>
             </div>
         </div>
     </form>
