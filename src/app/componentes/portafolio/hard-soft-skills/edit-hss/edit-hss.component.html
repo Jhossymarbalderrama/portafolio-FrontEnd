@@ -20,16 +20,18 @@
                 <input formControlName="porcentaje" type="range" class="form-range" min="0" max="100" step="5" value="0" id="porcentaje" (change)="captureRange()">                
             </div>
 
-            <!-- <div class="col-md-12">
-                <label for="lastName">Imagen</label>
-                <input type="text" class="form-control" [(ngModel)]="url_imagen" name="url_imagen" id="url_imagen"
-                    placeholder="Subir una Imagen">
-            </div> -->
         </div>
 
         <div class="row" align="center">
             <div class="pt-4">
-                <button type="submit" class="btn btn-primary btn-block w-50" [disabled]="formHSS.invalid">Modificar</button>
+                <button 
+                    *ngIf="this.estadoFormAlta" 
+                    type="submit" class="btn btn-success btn-block w-50" 
+                    [disabled]="formHSS.invalid"
+                    mat-raised-button color="primary" [class.spinner]="loading" [disabled]="formHSS.invalid"
+                    >Alta</button>
+
+                <button *ngIf="!this.estadoFormAlta" type="submit" class="btn btn-primary btn-block w-50" [disabled]="formHSS.invalid">Modificar</button>
             </div>
         </div>
     </form>

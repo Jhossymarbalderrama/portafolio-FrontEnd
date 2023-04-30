@@ -3,14 +3,14 @@ export class HardSoftSkill {
     private titulo: string;
     private detalle: string; 
     private porcentaje: number; //porcentaje de habilidad de skill 1 - 100 %
-    private url_imagen: string;
+    //private url_imagen: string;
+    private id_usuario?: number;
 
-
-    constructor(titulo: string, detalle: string, porcentaje: number, url_imagen: string){    
+    constructor(titulo: string, detalle: string, porcentaje: number, id_usuario?: number){    
         this.titulo = titulo;
         this.detalle = detalle;
-        this.porcentaje = porcentaje;
-        this.url_imagen = url_imagen;        
+        this.porcentaje = porcentaje;    
+        this.id_usuario = id_usuario;       
     }
 
     public getTitulo(){
@@ -35,13 +35,5 @@ export class HardSoftSkill {
 
     public setPorcentaje(porcentaje: any){
         this.porcentaje = porcentaje;
-    }
-    
-    public getUrl_Imagen(){
-        return this.url_imagen;
-    }
-
-    public setUrl_Imagen(url_imagen: any){
-        this.url_imagen = url_imagen;
-    }
+    }    
 }

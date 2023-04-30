@@ -7,6 +7,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { PersonasService } from 'src/app/servicios/personas.service';
 import { Persona } from 'src/app/clases/persona';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-acerca-de',
@@ -17,6 +18,7 @@ export class AcercaDeComponent implements OnInit {
 
   faEdit: any = faEdit;
   faWindowClose: any = faTimesCircle;
+  faPlus: any = faPlus;
 
   persona: any;
 
@@ -25,16 +27,7 @@ export class AcercaDeComponent implements OnInit {
     private NgbModal: NgbModal,
     private PersonasService: PersonasService
   ) {
-
-    let id: any = this.AuthService.logeado.getId_persona();
-
-    this.PersonasService.getPersona(
-      id
-    ).subscribe(datos_persona => {
-      this.persona = datos_persona;
-    })
-
-
+    this.getDatosPersona();
   }
 
   ngOnInit(): void {
@@ -42,10 +35,28 @@ export class AcercaDeComponent implements OnInit {
 
   openModal(modal: any) {
     this.NgbModal.open(modal, { centered: true });
-    
   }
 
   modalClose() {
     this.NgbModal.dismissAll();
+  }
+
+  actualizarDatos($event: boolean) {
+    if ($event) {
+      this.getDatosPersona();
+    }
+  }
+
+  getDatosPersona(): void {
+    setTimeout(() => {
+      let id: any = this.AuthService.logeado.getId_persona();
+
+      this.PersonasService.getPersona(
+        id
+      ).subscribe(datos_persona => {
+        console.log(datos_persona);
+        this.persona = datos_persona;
+      });
+    }, 500);
   }
 }

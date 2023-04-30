@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { HardSoftSkillsService } from 'src/app/servicios/hard-soft-skills.service';
 
@@ -14,7 +15,8 @@ export class HardSoftSkillsComponent implements OnInit {
 
   faEdit: any = faEdit;
   faWindowClose: any = faTimesCircle;
-  
+  faPlus: any = faPlus;
+
   hss: any = [];
   hssPersona: any = [];
 
@@ -22,18 +24,12 @@ export class HardSoftSkillsComponent implements OnInit {
     public AuthService:AuthService,
     private NgbModal: NgbModal,
     private HardSoftSkillsService: HardSoftSkillsService
-  ) {
-    let id: any = this.AuthService.logeado.getId_persona();
-
-    this.HardSoftSkillsService.getAll().subscribe( datos => {
-      this.hss = datos;
-      this.getHSSXpersona();      
-    });
+  ) {    
+    this.getHSS();    
   }
 
 
   ngOnInit(): void {
-
   }
 
   openModal(modal: any) {
@@ -45,10 +41,27 @@ export class HardSoftSkillsComponent implements OnInit {
   }
 
   getHSSXpersona():void{
+    this.hssPersona = [];
+
     for (const exp of this.hss) {
       if(exp.id_usuario == this.AuthService.logeado.getId_persona()){
         this.hssPersona.push(exp);
       }
     }
+  }
+
+  actualizarDatos($event: boolean){
+    if($event){
+      this.getHSS();
+    }
+  }
+
+  getHSS():void{
+    setTimeout(() => {      
+      this.HardSoftSkillsService.getAll().subscribe( datos => {        
+        this.hss = datos;
+        this.getHSSXpersona();      
+      });
+    }, 500);
   }
 }

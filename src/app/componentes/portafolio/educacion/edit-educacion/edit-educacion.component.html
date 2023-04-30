@@ -42,7 +42,13 @@
 
         <div class="row" align="center">
             <div class="pt-4">
-                <button type="submit" class="btn btn-primary btn-block w-50" [disabled]="formEducacion.invalid">Modificar</button>
+                <button 
+                    *ngIf="this.estadoFormAlta" 
+                    type="submit" class="btn btn-success btn-block w-50" 
+                    [disabled]="formEducacion.invalid"
+                    mat-raised-button color="primary" [class.spinner]="loading" [disabled]="formEducacion.invalid"
+                    >Alta</button>
+                <button *ngIf="!this.estadoFormAlta" type="submit" class="btn btn-primary btn-block w-50" [disabled]="formEducacion.invalid">Modificar</button>
             </div>
         </div>
     </form>

@@ -1,8 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Persona } from 'src/app/clases/persona';
 import { PersonasService } from 'src/app/servicios/personas.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-edit-descripcion',
@@ -12,10 +13,14 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class EditDescripcionComponent implements OnInit {
 
   @Input () persona: Persona | any;
-
+  @Output () cambios = new EventEmitter();
+  
   public formPersona: FormGroup;
   sobre_mi:any = "";
   
+  estadoFormAlta: boolean = true;
+  loading = false;
+
   constructor(
     private PersonasService: PersonasService,
     private NgbModal: NgbModal,
@@ -27,20 +32,52 @@ export class EditDescripcionComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.sobre_mi = this.persona.sobre_mi;
+    if(this.persona != null || this.persona != undefined){
+      this.sobre_mi = this.persona.sobre_mi;
+    }
   }
 
   onUpdatePersona():void{
     if(this.formPersona.valid){
-      let personaUpdate = this.persona;
+      if(this.estadoFormAlta != true){
+        let personaUpdate = this.persona;
 
-      personaUpdate.sobre_mi = this.formPersona.get("sobre_mi")?.value;
-
-      this.PersonasService.update(personaUpdate).subscribe();
-      this.modalClose();
+        personaUpdate.sobre_mi = this.formPersona.get("sobre_mi")?.value;
+  
+        this.PersonasService.update(personaUpdate).subscribe();
+        this.modalClose();
+      }else{
+        this.onAddSobre_mi();
+      }
     }
   }
 
+  onAddSobre_mi():void{
+    let personaUpdate = this.persona;
+
+      personaUpdate.sobre_mi = this.formPersona.get("sobre_mi")?.value;
+
+
+    this.PersonasService.update(personaUpdate).subscribe();
+    this.cambiosProyectos();
+    
+    this.procesoLoading();
+  }
+
+  procesoLoading(){
+    this.loading = true;
+    
+    setTimeout(() => {
+      this.loading = false;
+      this.modalClose()
+    }, 1300);
+  }
+
+
+  cambiosProyectos(){
+    this.cambios.emit(true);
+  }
+  
   modalClose() {
     this.NgbModal.dismissAll();
   }

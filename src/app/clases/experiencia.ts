@@ -6,14 +6,18 @@ export class Experiencia {
     private direccion: string;
     private url_logo: string;
 
+    private id_usuario?: number;
+
     constructor(nombre_empresa: string,
                 descripcion: string, aneos: string,
-                direccion: string, url_logo: string) {
+                direccion: string, url_logo: string,
+                id_usuario?: number) {
         this.nombre_empresa = nombre_empresa;
         this.descripcion = descripcion;
         this.aneos = aneos;
         this.direccion = direccion;
         this.url_logo = url_logo;
+        this.id_usuario = id_usuario;
     }
 
     public getNombre_Empresa(){

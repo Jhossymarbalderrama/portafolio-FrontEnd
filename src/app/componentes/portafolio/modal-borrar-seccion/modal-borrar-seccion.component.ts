@@ -14,8 +14,10 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 export class ModalBorrarSeccionComponent implements OnInit {
 
   @Input() elementoBaja: any;
-  @Output () cambios = new EventEmitter();
-  
+  @Output() cambios = new EventEmitter();
+
+  loading = false;
+
   constructor(
     private NgbModal: NgbModal,
     private PersonasService: PersonasService,
@@ -26,10 +28,10 @@ export class ModalBorrarSeccionComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    
+
   }
 
-  deleteElemento(){
+  deleteElemento() {
     switch (this.elementoBaja.tipo) {
       case "SOBRE_MI":
         this.deleteSobreMi();
@@ -50,37 +52,63 @@ export class ModalBorrarSeccionComponent implements OnInit {
   }
 
 
-  deleteSobreMi():void{
+  deleteSobreMi(): void {
     let deleteSobremi: any = this.elementoBaja.objeto;
 
     deleteSobremi.sobre_mi = '';
 
     this.PersonasService.update(deleteSobremi).subscribe();
+
+    this.cambiosProyectos();
+    
+    this.procesoLoading();
   }
 
-  deleteExperiencia():void{
+  deleteExperiencia(): void {
     this.ExperienciasService.delete(this.elementoBaja.objeto.id).subscribe();
+
+    this.cambiosProyectos();
+    
+    this.procesoLoading();
   }
-  
-  deleteEducacion():void{
+
+  deleteEducacion(): void {
     this.EducacionesService.delete(this.elementoBaja.objeto.id).subscribe();
+
+    this.cambiosProyectos();
+    
+    this.procesoLoading();
   }
 
-  deleteHSS():void{
+  deleteHSS(): void {
     this.HardSoftSkillsService.delete(this.elementoBaja.objeto.id).subscribe();
+    this.cambiosProyectos();
+    
+    this.procesoLoading();
   }
 
-  deleteProyeto():void{
+  deleteProyeto(): void {
     this.ProyectosService.delete(this.elementoBaja.objeto.id).subscribe();
     this.cambiosProyectos();
-    this.modalClose()
+    
+    this.procesoLoading();
+  }
+
+
+  procesoLoading(){
+    this.loading = true;
+    
+    setTimeout(() => {
+      this.loading = false;
+      this.modalClose()
+    }, 1300);
   }
 
   modalClose() {
     this.NgbModal.dismissAll();
   }
 
-  cambiosProyectos(){
+  cambiosProyectos() {
     this.cambios.emit(true);
   }
 }

@@ -4,6 +4,7 @@ import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { ExperienciasService } from 'src/app/servicios/experiencias.service';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-experiencia',
@@ -14,6 +15,7 @@ export class ExperienciaComponent implements OnInit {
 
   faEdit: any = faEdit;
   faWindowClose: any = faTimesCircle;
+  faPlus: any = faPlus;
 
   experiencias: any = [];
   experienciaPersona: any = [];
@@ -23,12 +25,7 @@ export class ExperienciaComponent implements OnInit {
     private NgbModal: NgbModal,
     private ExperienciasService: ExperienciasService
   ) {
-    let id: any = this.AuthService.logeado.getId_persona();
-
-    this.ExperienciasService.getAll().subscribe( datos => {
-      this.experiencias = datos;
-      this.getExperienciaXpersona();      
-    });
+    this.getProyectos();
   }
 
   ngOnInit(): void {
@@ -44,10 +41,26 @@ export class ExperienciaComponent implements OnInit {
 
 
   getExperienciaXpersona():void{
+    this.experienciaPersona = [];
     for (const exp of this.experiencias) {
       if(exp.id_usuario == this.AuthService.logeado.getId_persona()){
         this.experienciaPersona.push(exp);
       }
     }
+  }
+
+  actualizarDatos($event: boolean){
+    if($event){
+      this.getProyectos();
+    }
+  }
+
+  getProyectos():void{
+    setTimeout(() => {
+      this.ExperienciasService.getAll().subscribe( datos => {
+        this.experiencias = datos;
+        this.getExperienciaXpersona();      
+      });
+    }, 500);
   }
 }

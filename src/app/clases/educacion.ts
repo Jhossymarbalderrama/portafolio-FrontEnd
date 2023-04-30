@@ -8,14 +8,18 @@ export class Educacion {
     private direccion: string;
     private url_logo : string;
 
+    private id_usuario?: number;
+
     constructor(nombre_establecimiento: string, titulo:string,
-                descripcion: string, aneos: number, direccion:string, url_logo: string) {        
+                descripcion: string, aneos: number, direccion:string, url_logo: string,
+                id_usuario ?: number) {        
         this.nombre_establecimiento = nombre_establecimiento;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.aneos = aneos;
         this.direccion = direccion;
         this.url_logo = url_logo;
+        this.id_usuario = id_usuario;
     }       
 
     public getNombre_Establecimiento(){

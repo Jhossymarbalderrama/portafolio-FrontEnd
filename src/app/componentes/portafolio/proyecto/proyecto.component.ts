@@ -40,6 +40,8 @@ export class ProyectoComponent implements OnInit {
   }
 
   getProyectosXpersona():void{
+    this.proyectosPersona = [];
+
     for (const edu of this.proyectos) {
       if(edu.id_usuario == this.AuthService.logeado.getId_persona()){
         this.proyectosPersona.push(edu);
@@ -55,8 +57,7 @@ export class ProyectoComponent implements OnInit {
 
   getProyectos():void{
     setTimeout(() => {
-      this.ProyectosService.getAll().subscribe(datos =>{
-        console.log(datos);
+      this.ProyectosService.getAll().subscribe(datos =>{        
         this.proyectos = datos;
         this.getProyectosXpersona();  
       });

@@ -1,15 +1,17 @@
 <div class="p-4">    
-    <div class="row" align="center">        
-        <h4>¿Esta seguro de <strong style="color: red;">eliminar tú {{this.elementoBaja.tipo}}</strong> esta seccion?</h4>            
+    <div class="row pb-5" align="center">        
+        <h4>¿Esta seguro de <strong style="color: red;">eliminar tú {{this.elementoBaja.tipo}}</strong>?</h4>            
     </div>
-    <div class="row" align="center">
+    <div class="row pt-4" align="center">
         <div class="col-6">
             <button class="btn btn-primary btn-block w-100" (click)="modalClose()">
                 Cancelar
             </button>
         </div>
         <div class="col-6">
-            <button class="btn btn-danger btn-block w-100" (click)="deleteElemento()">
+            <button 
+                mat-raised-button color="primary" [class.spinner]="loading" [disabled]="loading"
+                class="btn btn-danger btn-block w-100" (click)="deleteElemento()">
                 Eliminar
             </button>
         </div>

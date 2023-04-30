@@ -1,8 +1,16 @@
 <div class="container_experiencias">
     <div class="container text-left py-4">
         <!-- Titulo Seccion -->
-        <div class="row container_titulo">
-            <h2>Experiencia Laboral</h2>
+        <div class="row container_titulo">        
+            <div class="col-6" align="left">
+                <h2>Experiencia Laboral</h2>
+            </div>
+                                   
+            <div class="col-6" align="right">
+                <div *ngIf="AuthService.logeado != null" class="btn btn-add" align="center" (click)="openModal(modalExperienciaADD)">
+                    <fa-icon [icon]="faPlus"></fa-icon>                             
+                </div>   
+            </div>
         </div>
 
         <!-- Experiencias -->
@@ -69,8 +77,23 @@
                         (click)="modal.dismiss('Cross click')"></button>
                 </div>
 
-                <app-modal-borrar-seccion></app-modal-borrar-seccion>
+                <app-modal-borrar-seccion 
+                [elementoBaja]='{
+                    objeto: experiencia,
+                    tipo: "EXPERIENCIA"
+                }'
+                (cambios)="actualizarDatos($event)"
+                ></app-modal-borrar-seccion>
             </ng-template>
         </div>
+
+        <ng-template #modalExperienciaADD let-modal>
+            <div class="modal-header">
+                <button type="button" class="btn-close" aria-label="Close"
+                    (click)="modal.dismiss('Cross click')"></button>
+            </div>
+
+            <app-edit-experiencia (cambios)="actualizarDatos($event)"></app-edit-experiencia>
+        </ng-template>
     </div>
 </div>

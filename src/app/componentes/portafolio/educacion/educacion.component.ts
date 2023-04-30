@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from 'src/app/servicios/auth.service';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { EducacionesService } from 'src/app/servicios/educaciones.service';
 
@@ -14,7 +15,8 @@ export class EducacionComponent implements OnInit {
 
   faEdit: any = faEdit;
   faWindowClose: any = faTimesCircle;
-  
+  faPlus: any = faPlus;
+
   eduaciones: any = [];
   eduacionesPersona: any = [];
 
@@ -23,12 +25,7 @@ export class EducacionComponent implements OnInit {
     private NgbModal: NgbModal,
     private EducacionesService:EducacionesService
   ) { 
-    let id: any = this.AuthService.logeado.getId_persona();
-
-    this.EducacionesService.getAll().subscribe( datos => {
-      this.eduaciones = datos;
-      this.getEducacionsXpersona();      
-    });
+    this.getEduaciones();
   }
 
   ngOnInit(): void {
@@ -43,10 +40,27 @@ export class EducacionComponent implements OnInit {
   }
 
   getEducacionsXpersona():void{
+    this.eduacionesPersona = [];
+
     for (const edu of this.eduaciones) {
       if(edu.id_usuario == this.AuthService.logeado.getId_persona()){
         this.eduacionesPersona.push(edu);
       }
     }
   }
+
+  actualizarDatos($event: boolean){
+    if($event){
+      this.getEduaciones();
+    }
+  }
+
+  getEduaciones():void{
+    setTimeout(() => {
+      this.EducacionesService.getAll().subscribe( datos => {        
+        this.eduaciones = datos;
+        this.getEducacionsXpersona();      
+      });
+    }, 500);
+  }  
 }

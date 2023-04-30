@@ -22,6 +22,7 @@ export class EditProyectoComponent implements OnInit {
   sistema:string = "";
 
   estadoFormAlta: boolean = true;
+  loading = false;
 
   constructor(
     private ProyectosService:ProyectosService,
@@ -76,8 +77,19 @@ export class EditProyectoComponent implements OnInit {
     this.ProyectosService.create(proyectoUpdate).subscribe();
 
     this.cambiosProyectos();
-    this.modalClose();
+    
+    this.procesoLoading();
   }
+
+  procesoLoading(){
+    this.loading = true;
+    
+    setTimeout(() => {
+      this.loading = false;
+      this.modalClose()
+    }, 1300);
+  }
+
 
   cambiosProyectos(){
     this.cambios.emit(true);
