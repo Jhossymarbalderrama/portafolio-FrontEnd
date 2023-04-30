@@ -37,6 +37,10 @@ import { EditProyectoComponent } from './componentes/portafolio/proyecto/edit-pr
 import { EditHssComponent } from './componentes/portafolio/hard-soft-skills/edit-hss/edit-hss.component';
 import { EditFotoPerfilComponent } from './componentes/portafolio/acerca-de/edit-foto-perfil/edit-foto-perfil.component';
 import { EditBannerComponent } from './componentes/header/banner/edit-banner/edit-banner.component';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { environment } from '../environments/environment';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
   declarations: [
@@ -61,7 +65,10 @@ import { EditBannerComponent } from './componentes/header/banner/edit-banner/edi
       
     }),
     HttpClientModule,
-    NgbModule 
+    NgbModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
+    provideStorage(() => getStorage()) 
   ],
   providers: [],
   bootstrap: [AppComponent]

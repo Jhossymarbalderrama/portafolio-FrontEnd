@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "my-portafolio-7abab": {
+      "hosting": {
+        "my-portafolio": [
+          "my-portafolio-7abab"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "my-portafolio-7abab"
+  }
+}
