@@ -33,22 +33,36 @@
                     formControlName="direccion" placeholder="Ingrese direccion">
             </div>
 
-            <div class="col-md-12">
+            <!-- <div class="col-md-12">
                 <label for="lastName">Logo</label>
                 <input type="text" class="form-control form-control-lg" [(ngModel)]="url_logo" name="url_logo" id="url_logo"
                     formControlName="url_logo" placeholder="Subir una Foto">
+            </div> -->
+
+            <div class="col-md-12">
+                <label for="lastName">Logo</label>
+
+                <!-- Estoy modificando -->
+                <div *ngIf="this.educacion != null || this.educacion != undefined" class="input-group pt-3">                                            
+                    <input type="file" class="form-control" (change)="subirLogo_ModificacionEducacion($event)">
+                </div> 
+
+                <!-- Estoy dando de Alta -->
+                <div *ngIf="this.educacion == null || this.educacion == undefined" class="input-group pt-3">                                            
+                    <input type="file" class="form-control" (change)="subirLogo_AltaEducacion($event)">
+                </div>
             </div>
         </div>
 
         <div class="row" align="center">
             <div class="pt-4">
                 <button 
-                    *ngIf="this.estadoFormAlta" 
+                    *ngIf="this.educacion == null || this.educacion == undefined" 
                     type="submit" class="btn btn-success btn-block w-50" 
                     [disabled]="formEducacion.invalid"
                     mat-raised-button color="primary" [class.spinner]="loading" [disabled]="formEducacion.invalid"
                     >Alta</button>
-                <button *ngIf="!this.estadoFormAlta" type="submit" class="btn btn-primary btn-block w-50" [disabled]="formEducacion.invalid">Modificar</button>
+                <button *ngIf="this.educacion != null || this.educacion != undefined" type="submit" class="btn btn-primary btn-block w-50" [disabled]="formEducacion.invalid">Modificar</button>
             </div>
         </div>
     </form>

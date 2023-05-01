@@ -1,17 +1,22 @@
 <div class="modal-body">
     <h2>Datos Perfil</h2>
     <form>
-        <div class="row g-3">
-
-            <div class="col-md-12">
-                <label for="title">Foto Perfil</label>
-                <input type="text" class="form-control" [(ngModel)]="url_foto" name="url_foto" id="url_foto"
-                    placeholder="ingrese un foto de perfil">
-            </div>
+        <div class="row">
 
             <div class="row" align="center">
-                <div class="pt-4">
-                    <button type="submit" class="btn btn-primary btn-block w-50">Modificar</button>
+                <div class="foto-perfil p-4">
+                    <div class="col" mat-raised-button color="primary" [class.spinner]="loading">
+                        <img class="perfil_foto" src="{{persona.url_foto_perfil}}">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <h3>Cambiar Foto</h3>
+                    <div class="input-group pt-3">                                            
+                        <input type="file" class="form-control" (change)="uploadImage($event)">
+                    </div>
                 </div>
             </div>
         </div>

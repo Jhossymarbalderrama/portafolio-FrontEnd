@@ -8,8 +8,8 @@ import { Persona } from '../clases/persona';
 })
 export class PersonasService {
 
-  // private url: string = "http://localhost:8080/api/personas/";
-  private url: string = "https://portafolio-backend-balderrama.onrender.com/api/personas/";
+  private url: string = "http://localhost:8080/api/personas/";
+  // private url: string = "https://portafolio-backend-balderrama.onrender.com/api/personas/";
 
   constructor(
     private http: HttpClient

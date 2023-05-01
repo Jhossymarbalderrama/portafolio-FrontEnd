@@ -4,6 +4,7 @@ import { Experiencia } from 'src/app/clases/experiencia';
 import { ExperienciasService } from 'src/app/servicios/experiencias.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { ImageService } from 'src/app/servicios/image.service';
 
 @Component({
   selector: 'app-edit-experiencia',
@@ -30,15 +31,17 @@ export class EditExperienciaComponent implements OnInit {
     private ExperienciasService: ExperienciasService,
     private NgbModal: NgbModal,
     private FormBuilder: FormBuilder,
-    private AuthService: AuthService
+    private AuthService: AuthService,
+    public ImageService: ImageService
   ) {
-    this.formExperiencia = this.FormBuilder.group({
-      url_logo: ['', [Validators.required]],
+    this.formExperiencia = this.FormBuilder.group({      
       nombre_empresa: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       aneos: ['', [Validators.required]],
       direccion: ['', [Validators.required]]
     });
+
+    this.ImageService.url_logo_experiencia == '';
   }
 
   ngOnInit(): void {
@@ -46,30 +49,31 @@ export class EditExperienciaComponent implements OnInit {
       this.nombre_empresa = this.experiencia.nombre_empresa;
       this.descripcion = this.experiencia.descripcion;
       this.aneos = this.experiencia.aneos;
-      this.direccion = this.experiencia.direccion;
-      this.url_logo = this.experiencia.url_logo;
+      this.direccion = this.experiencia.direccion;      
     }
   }
 
   onUpdateExperiencia(): void {
-    if (this.formExperiencia.valid) {
-      if(this.estadoFormAlta != true){
+    if (this.formExperiencia.valid) {      
+      if(this.experiencia != null || this.experiencia != undefined){
+        
         let experienciaUpdate = this.experiencia;
 
         experienciaUpdate.nombre_empresa = this.formExperiencia.get("nombre_empresa")?.value;
         experienciaUpdate.descripcion = this.formExperiencia.get("descripcion")?.value;
         experienciaUpdate.aneos = this.formExperiencia.get("aneos")?.value;
         experienciaUpdate.direccion = this.formExperiencia.get("direccion")?.value;
-        experienciaUpdate.url_logo = this.formExperiencia.get("url_logo")?.value;
   
         this.ExperienciasService.update(experienciaUpdate).subscribe();
   
         this.modalClose();
       }else{
+        
         this.onAddExperiencia();
       }
     }
   }
+
 
   onAddExperiencia():void{
     let experienciaNew : Experiencia = new Experiencia(
@@ -77,12 +81,13 @@ export class EditExperienciaComponent implements OnInit {
       this.formExperiencia.get("descripcion")?.value,
       this.formExperiencia.get("aneos")?.value,
       this.formExperiencia.get("direccion")?.value,
-      this.formExperiencia.get("url_logo")?.value,
+      this.ImageService.url_logo_experiencia,
       this.AuthService.logeado.getId_persona()
     );
-
+  
     this.ExperienciasService.create(experienciaNew).subscribe();
-
+    this.ImageService.url_logo_experiencia = '';
+    
     this.cambiosProyectos();
     
     this.procesoLoading();
@@ -93,7 +98,7 @@ export class EditExperienciaComponent implements OnInit {
     
     setTimeout(() => {
       this.loading = false;
-      this.modalClose()
+      this.modalClose()      
     }, 1300);
   }
 
@@ -106,4 +111,27 @@ export class EditExperienciaComponent implements OnInit {
   modalClose() {
     this.NgbModal.dismissAll();
   }
+
+  //Alta de Experiecia
+  subirLogo_AltaExperiencia($event:any){
+    let file: any = $event.target.files[0];   
+    
+    this.loading = true;
+    this.ImageService.uploadExperienciaLogoAlta(file);
+    setTimeout(() => {
+      this.loading = false;      
+    }, 2000); 
+  }
+
+  //Modificacion de Experiencia
+  subirLogo_ModificacionExperiencia($event:any){
+    const file = $event.target.files[0];
+    this.loading = true;
+    this.ImageService.uploadExperienciaUpdate(file,this.experiencia);
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
+  }
+
+  
 }

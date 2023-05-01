@@ -8,8 +8,8 @@
             </div>                             
         </div>                
     </div>
-
-    <img src="../../../../assets/img/fondos/fondo-perfil.jpg" alt="">
+    
+    <img src="{{this.persona?.url_banner_perfil}}" class="banner">
 </div>
 
 
@@ -18,5 +18,5 @@
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
 
-    <app-edit-banner></app-edit-banner>
+    <app-edit-banner [persona]="persona"></app-edit-banner>
 </ng-template>

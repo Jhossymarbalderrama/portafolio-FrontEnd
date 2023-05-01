@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EducacionesService } from 'src/app/servicios/educaciones.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { ImageService } from 'src/app/servicios/image.service';
 
 @Component({
   selector: 'app-edit-educacion',
@@ -31,15 +32,15 @@ export class EditEducacionComponent implements OnInit {
     private EducacionesService: EducacionesService,
     private NgbModal: NgbModal,
     private FormBuilder: FormBuilder,
-    private AuthService:AuthService
+    private AuthService:AuthService,
+    public ImageService:ImageService
   ) {
     this.formEducacion = this.FormBuilder.group({
       nombre_establecimiento: ['', [Validators.required]],
       titulo: ['', [Validators.required]],
       descripcion: ['', [Validators.required]],
       aneos: ['', [Validators.required]],
-      direccion: ['', [Validators.required]],
-      url_logo: ['', [Validators.required]]
+      direccion: ['', [Validators.required]]     
     });
   }
 
@@ -50,13 +51,13 @@ export class EditEducacionComponent implements OnInit {
       this.descripcion = this.educacion.descripcion;
       this.aneos = this.educacion.aneos;
       this.direccion = this.educacion.direccion;
-      this.url_logo = this.educacion.url_logo;
+      // this.url_logo = this.educacion.url_logo;
     }
   }
 
   onUpdatePersona(): void {
     if (this.formEducacion.valid) {
-      if (this.estadoFormAlta != true) {
+      if (this.educacion != null || this.educacion != undefined) {
         let educacionUpdate = this.educacion;
 
         educacionUpdate.nombre_establecimiento = this.formEducacion.get("nombre_establecimiento")?.value;
@@ -64,7 +65,7 @@ export class EditEducacionComponent implements OnInit {
         educacionUpdate.descripcion = this.formEducacion.get("descripcion")?.value;
         educacionUpdate.aneos = this.formEducacion.get("aneos")?.value;
         educacionUpdate.direccion = this.formEducacion.get("direccion")?.value;
-        educacionUpdate.url_logo = this.formEducacion.get("url_logo")?.value;
+        
 
         this.EducacionesService.update(educacionUpdate).subscribe();
 
@@ -82,11 +83,12 @@ export class EditEducacionComponent implements OnInit {
       this.formEducacion.get("descripcion")?.value,
       this.formEducacion.get("aneos")?.value,
       this.formEducacion.get("direccion")?.value,
-      this.formEducacion.get("url_logo")?.value,
+      this.ImageService.url_logo_educacion,
       this.AuthService.logeado.getId_persona()
     );
 
     this.EducacionesService.create(educacionNew).subscribe();
+    this.ImageService.url_logo_educacion = '';
 
     this.cambiosEducaciones();
     this.procesoLoading();
@@ -107,5 +109,26 @@ export class EditEducacionComponent implements OnInit {
 
   modalClose() {
     this.NgbModal.dismissAll();
+  }
+
+  //Alta de Experiecia
+  subirLogo_AltaEducacion($event:any){
+    let file: any = $event.target.files[0];   
+    
+    this.loading = true;
+    this.ImageService.uploadEducacionLogoAlta(file);
+    setTimeout(() => {
+      this.loading = false;      
+    }, 2000); 
+  }
+
+  //Modificacion de Experiencia
+  subirLogo_ModificacionEducacion($event:any){
+    const file = $event.target.files[0];
+    this.loading = true;
+    this.ImageService.uploadEducacionUpdate(file,this.educacion);
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
   }
 }

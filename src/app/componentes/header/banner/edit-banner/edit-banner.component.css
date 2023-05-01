@@ -1,0 +1,30 @@
+@keyframes spinner {
+    to {transform: rotate(360deg);}
+  }
+   
+  .spinner:before {
+    content: '';
+    box-sizing: border-box;
+    position: absolute;
+    top: 41%;
+    left: 44%;
+    width: 60px;
+    height: 60px;
+    margin-top: -10px;
+    margin-left: -10px;
+    border-radius: 50%;
+    border: 6px solid #2b61bf74;
+    border-top-color: #0950ca;
+    animation: spinner .8s linear infinite;
+  }
+
+  .form-control{
+    background-color: #1f56b5ab;
+}
+
+.banner{
+  width: 380px !important;
+  height: 180px !important;
+  z-index: 4;
+  border: 7px solid #1f56b577;   
+}

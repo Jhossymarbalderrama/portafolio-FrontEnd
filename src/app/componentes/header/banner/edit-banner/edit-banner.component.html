@@ -1,17 +1,18 @@
 <div class="modal-body">
-    <h2>Banner</h2>
+    <h2>Banner Pefil</h2>
     <form>
-        <div class="row g-3">
+        <div class="row">
 
-            <div class="col-md-12">
-                <label for="title">Banner perfil</label>
-                <input type="text" class="form-control" [(ngModel)]="url_banner" name="url_banner" id="url_banner"
-                    placeholder="ingrese url del banner">
+            <div class="col-md-12" align="center" mat-raised-button color="primary" [class.spinner]="loading">
+                <img class="banner" src="{{persona?.url_banner_perfil}}" >
             </div>
 
-            <div class="row" align="center">
-                <div class="pt-4">
-                    <button type="submit" class="btn btn-primary btn-block w-50">Modificar</button>
+            <div class="row">
+                <div class="col">
+                    <h3>Cambiar Banner</h3>
+                    <div class="input-group pt-3">                                            
+                        <input type="file" class="form-control" (change)="uploadImage($event)">
+                    </div>
                 </div>
             </div>
         </div>

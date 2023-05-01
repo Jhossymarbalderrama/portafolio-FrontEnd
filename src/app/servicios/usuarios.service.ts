@@ -8,8 +8,8 @@ import { Usuario } from '../clases/usuario';
 })
 export class UsuariosService {
 
-  // private url: string = "http://localhost:8080/api/usuarios/";
-  private url: string = "https://portafolio-backend-balderrama.onrender.com/api/usuarios/";
+   private url: string = "http://localhost:8080/api/usuarios/";
+  //private url: string = "https://portafolio-backend-balderrama.onrender.com/api/usuarios/";
 
   constructor(
     private http: HttpClient

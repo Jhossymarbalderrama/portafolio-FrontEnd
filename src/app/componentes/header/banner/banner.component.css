@@ -29,3 +29,8 @@ img{
 .row {
     margin:0px;
 }
+
+.banner{
+    width: 100% !important;
+    height: 373.611px !important;    
+}

@@ -8,7 +8,7 @@
                         <fa-icon [icon]="faEdit"></fa-icon>
                     </div>
                     <div>
-                        <img src="../../../assets/img/material/foto-perfil.jpg" alt="" width="120%" height="120%"
+                        <img src="{{this.persona?.url_foto_perfil}}" alt="" 
                             class="perfil_foto">
                     </div>
                 </div>
@@ -74,7 +74,7 @@
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
 
-    <app-edit-foto-perfil></app-edit-foto-perfil>
+    <app-edit-foto-perfil [persona]='this.persona'></app-edit-foto-perfil>
 </ng-template>
 
 <ng-template #modalTitulo let-modal>

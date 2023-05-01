@@ -1,4 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Persona } from 'src/app/clases/persona';
+import { AuthService } from 'src/app/servicios/auth.service';
+import { ImageService } from 'src/app/servicios/image.service';
+import { PersonasService } from 'src/app/servicios/personas.service';
+import { UsuariosService } from 'src/app/servicios/usuarios.service';
 
 @Component({
   selector: 'app-edit-foto-perfil',
@@ -7,10 +12,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditFotoPerfilComponent implements OnInit {
 
-  url_foto: string ="";
-  constructor() { }
+  @Input () persona : Persona | any;
 
-  ngOnInit(): void {
+  url_foto: string ="";
+
+  loading = false;
+  constructor(
+    private ImageService: ImageService,
+  ) { 
+
   }
 
+  ngOnInit(): void {
+    
+  }
+
+  uploadImage($event:any){
+    const file = $event.target.files[0];
+    this.loading = true;
+    this.ImageService.uploadImagePerfil(file, this.persona);
+    setTimeout(() => {
+      this.loading = false;
+    }, 2000);
+  }
 }

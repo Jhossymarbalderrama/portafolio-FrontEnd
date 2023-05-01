@@ -7,7 +7,7 @@ import { Usuario } from '../clases/usuario';
 export class AuthService {
   
   public logeado: Usuario = new Usuario("jhossymarbalderrama@gmail.com","BalderramaJhossy159",1);  
-  // public logeado:any;
+  // public logeado:any;  
   
   constructor() { }
 }

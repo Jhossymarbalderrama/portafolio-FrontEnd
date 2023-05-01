@@ -8,8 +8,8 @@ import { Experiencia } from '../clases/experiencia';
 })
 export class ExperienciasService {
 
-  // private url: string = "http://localhost:8080/api/experiencias/";
-  private url: string = "https://portafolio-backend-balderrama.onrender.com/api/experiencias/";
+  private url: string = "http://localhost:8080/api/experiencias/";
+  // private url: string = "https://portafolio-backend-balderrama.onrender.com/api/experiencias/";
 
   constructor(
     private http: HttpClient

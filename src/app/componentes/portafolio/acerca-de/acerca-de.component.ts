@@ -53,8 +53,7 @@ export class AcercaDeComponent implements OnInit {
 
       this.PersonasService.getPersona(
         id
-      ).subscribe(datos_persona => {
-        console.log(datos_persona);
+      ).subscribe(datos_persona => {        
         this.persona = datos_persona;
       });
     }, 500);
