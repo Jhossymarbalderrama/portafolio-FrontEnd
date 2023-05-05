@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Usuario } from 'src/app/clases/usuario';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
 import { AuthService } from 'src/app/servicios/auth.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-card-login',
@@ -19,7 +20,8 @@ export class CardLoginComponent implements OnInit {
     private Router: Router,
     private FormBuilder: FormBuilder,
     private UsuariosService: UsuariosService,
-    private AuthService: AuthService
+    private AuthService: AuthService,
+    private NgbModal: NgbModal
   ) {
     this.formLogin = this.FormBuilder.group({
       usuario: ['', [Validators.required, Validators.email]],
@@ -43,10 +45,15 @@ export class CardLoginComponent implements OnInit {
   onLogin(): void {
     if (this.formLogin.valid) {
       if (this.usuarioExist(this.formLogin.get("usuario")?.value, this.formLogin.get("contraseña")?.value)) {
-        this.AuthService.estadoLogin = true;                
-        this.Router.navigateByUrl('portafolio');
+        this.AuthService.estadoLogin = true;   
+        this.modalClose();             
+        //this.Router.navigateByUrl('portafolio');
       }
     }
+  }
+
+  modalClose() {
+    this.NgbModal.dismissAll();
   }
 
   getAllUsuarios(): void {
@@ -76,6 +83,7 @@ export class CardLoginComponent implements OnInit {
   acceso():void{
     this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);
     this.AuthService.estadoLogin = true;
-    this.Router.navigateByUrl('/portafolio');    
+    //this.Router.navigateByUrl('/portafolio');    
+    this.modalClose();
   }
 }

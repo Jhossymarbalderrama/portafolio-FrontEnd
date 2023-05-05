@@ -1,13 +1,8 @@
-<!-- <div>
-    <a href=""><img src="../../../../assets/img/logo/logos/linkedin.png" id="linkedin"></a>
-    <a href=""><img src="../../../../assets/img/logo/logos/github.png" id="github"></a>
-    <a href=""><img src="../../../../assets/img/logo/logos/instagram.png" id="instagram"></a>
-</div> -->
 
 <div>
     <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
         <li>
-            <a class="nav-link text-white btn-social ">
+            <a class="nav-link text-white btn-social" [href]="this.redSocial[0]?.link" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
                     class="bi bi-linkedin btn-in" viewBox="0 0 16 16">
                     <path
@@ -16,7 +11,7 @@
             </a>
         </li>
         <li>
-            <a class="nav-link text-white btn-social">
+            <a class="nav-link text-white btn-social" [href]="this.redSocial[2]?.link" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
                     class="bi bi-github btn-git" viewBox="0 0 16 16">
                     <path
@@ -25,7 +20,9 @@
             </a>
         </li>
         <li>
-            <a class="nav-link text-white btn-social">
+            
+
+            <a class="nav-link text-white btn-social" [href]="this.redSocial[3]?.link" target="_blank">
                 <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
                     class="bi bi-instagram btn-ig" viewBox="0 0 16 16">
                     <path
@@ -34,15 +31,17 @@
             </a>
 
         </li>
-
+        
         <li>
-            <div>               
-                <button *ngIf="!this.AuthService.estadoLogin" class="btn btn-light px-5" type="button" (click)="onLogin()">Login</button>
-                <button *ngIf="this.AuthService.estadoLogin" class="btn btn-light px-5" type="button" (click)="onLogout()">Logout</button>
-                
+            <div style="margin-left: 40px;">               
+                <button *ngIf="!this.AuthService.estadoLogin" class="btn btn-light px-5" type="button" (click)="openModal(modalLogin)">Login</button>
+                <button *ngIf="this.AuthService.estadoLogin" class="btn btn-light px-5" type="button" (click)="onLogout()">Logout</button>                
             </div>
         </li>
     </ul>
 </div>
 
 
+<ng-template #modalLogin let-modal>
+    <app-card-login></app-card-login>
+</ng-template>

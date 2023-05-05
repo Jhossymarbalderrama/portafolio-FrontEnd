@@ -33,11 +33,11 @@
                     <div class="row">
                         <div class="col-8">                            
                             <div class="row">
-                                <div class="col-6" align="left">
+                                <div class="col-9" align="left">
                                     <h2 style="font-weight: bold;">Sobre Mí</h2>
                                 </div>
                                                        
-                                <div class="col-6" align="right">
+                                <div class="col-3" align="right">
                                     <div *ngIf="AuthService.estadoLogin && this.persona?.sobre_mi == ''" class="btn btn-add btn-icon" align="center" (click)="openModal(modalDescripcionADD)">
                                         <fa-icon [icon]="faPlus"></fa-icon>                             
                                     </div>   

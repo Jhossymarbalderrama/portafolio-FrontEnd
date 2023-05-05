@@ -27,7 +27,7 @@
 
 
 @media (max-width:576px){
-    app-logo-footer{
+    /* app-logo-footer{
         padding-left: 10%;
         padding-right: 5%;
     }
@@ -37,5 +37,14 @@
         padding-right: 30%; 
         padding-left: 5%;
         padding-top: 2%;
-    }   
+    }    */
+
+    .row{
+        align-items: center !important;
+
+        text-align: center !important;
+        display: flex;
+        justify-content: center !important;
+    }
+
 }

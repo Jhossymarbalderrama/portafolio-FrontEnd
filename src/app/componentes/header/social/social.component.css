@@ -6,3 +6,36 @@ img{
     width: 35px;
 }
 
+button{
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.btn-git, .btn-ig, .btn-in{
+    cursor: pointer;
+}
+
+
+.btn-git:hover{    
+    border-radius: 100%;
+    color: rgb(255, 17, 0);
+    background: white;
+    
+}
+
+.btn-ig:hover{
+    background: #f09433; 
+    background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+    background: -webkit-linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); 
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+    border-radius: 30%;
+    
+}
+
+.btn-in:hover{
+    background: white;
+    color: #0270AD;
+    border-radius: 10%;
+}
+

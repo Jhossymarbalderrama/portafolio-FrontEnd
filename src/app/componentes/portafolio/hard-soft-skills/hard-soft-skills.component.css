@@ -21,7 +21,8 @@ app-edit-hss, app-modal-borrar-seccion{
 }
 .container_hss{     
     padding: 1em;
-    background-color: #00348e2b;
+    /* background-color: #00348e2b; */
+    background-color: #022d772b;
 }
 
 /* Stylos botones de edicion y exit */
