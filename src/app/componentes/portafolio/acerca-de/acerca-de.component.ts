@@ -20,13 +20,13 @@ export class AcercaDeComponent implements OnInit {
   faWindowClose: any = faTimesCircle;
   faPlus: any = faPlus;
 
-  persona: any;
+  persona: any = [];
 
   constructor(
     public AuthService: AuthService,
     private NgbModal: NgbModal,
     private PersonasService: PersonasService
-  ) {
+  ) {    
     this.getDatosPersona();
   }
 
@@ -49,13 +49,14 @@ export class AcercaDeComponent implements OnInit {
 
   getDatosPersona(): void {
     setTimeout(() => {
-      let id: any = this.AuthService.logeado.getId_persona();
-
-      this.PersonasService.getPersona(
-        id
-      ).subscribe(datos_persona => {        
-        this.persona = datos_persona;
-      });
+      let id: any = this.AuthService.logeado?.getId_persona();
+      if (id) {
+        this.PersonasService.getPersona(
+          id
+        ).subscribe(datos_persona => {
+          this.persona = datos_persona;
+        });
+      }
     }, 500);
   }
 }

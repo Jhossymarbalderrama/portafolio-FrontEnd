@@ -7,7 +7,7 @@
             </div>
                                    
             <div class="col-6" align="right">
-                <div *ngIf="AuthService.logeado != null" class="btn btn-add" align="center" (click)="openModal(modalProyectADD)">
+                <div *ngIf="AuthService.estadoLogin" class="btn btn-add" align="center" (click)="openModal(modalProyectADD)">
                     <fa-icon [icon]="faPlus"></fa-icon>                             
                 </div>   
             </div>
@@ -15,19 +15,19 @@
 
 
         <!-- Experiencias -->
-        <div class="row py-2" *ngFor="let proyecto of this.proyectos">
+        <div class="row py-2" *ngFor="let proyecto of this.proyectosPersona">
             <hr>
 
             <div class="row">
                 <div class="col-9">                    
                 </div>
                 <div class="col-1" style="margin-right: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalProyecto)" align="center">
+                    <div *ngIf="AuthService.estadoLogin" class="btn btn-edit" (click)="openModal(modalProyecto)" align="center">
                         <fa-icon [icon]="faEdit"></fa-icon>                                   
                     </div>                             
                 </div>                
                 <div class="col-1" style="margin-left: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
+                    <div *ngIf="AuthService.estadoLogin" class="btn btn-clos" (click)="openModal(modalDelete)" align="center">
                         <fa-icon [icon]="faWindowClose"></fa-icon>                                   
                     </div> 
                 </div>

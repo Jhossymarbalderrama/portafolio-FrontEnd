@@ -43,7 +43,7 @@ export class ExperienciaComponent implements OnInit {
   getExperienciaXpersona():void{
     this.experienciaPersona = [];
     for (const exp of this.experiencias) {
-      if(exp.id_usuario == this.AuthService.logeado.getId_persona()){
+      if(exp.id_usuario == this.AuthService.logeado?.getId_persona()){
         this.experienciaPersona.push(exp);
       }
     }

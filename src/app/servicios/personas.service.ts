@@ -11,6 +11,8 @@ export class PersonasService {
   private url: string = "http://localhost:8080/api/personas/";
   // private url: string = "https://portafolio-backend-balderrama.onrender.com/api/personas/";
 
+  public datosPersona: any;
+
   constructor(
     private http: HttpClient
   ) { }
@@ -22,7 +24,7 @@ export class PersonasService {
 
   //Traer Persona
   getPersona(id:number):Observable<Persona>{
-    return this.http.get<Persona>(this.url+"listar/"+id);
+    return this.http.get<Persona>(this.url+"listar/"+id) as Observable<Persona>;
   }
 
   //Alta 

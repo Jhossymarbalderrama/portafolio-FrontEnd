@@ -36,17 +36,15 @@ export class CardLoginComponent implements OnInit {
 
   }
 
-  onRegistro(): void {
-    this.Router.navigateByUrl("registro");
-  }
+  // onRegistro(): void {
+  //   this.Router.navigateByUrl("registro");
+  // }
 
   onLogin(): void {
     if (this.formLogin.valid) {
-      console.log(this.listaAux);
-      if (this.usuarioExist()) {
-        console.log("Se encontro al usuario!!");
-        console.log("Logeando...");
-        this.Router.navigateByUrl("portafolio");
+      if (this.usuarioExist(this.formLogin.get("usuario")?.value, this.formLogin.get("contraseña")?.value)) {
+        this.AuthService.estadoLogin = true;                
+        this.Router.navigateByUrl('portafolio');
       }
     }
   }
@@ -57,24 +55,27 @@ export class CardLoginComponent implements OnInit {
     }
   }
 
-  usuarioExist(): boolean {
+  usuarioExist(usuarioForm: string, contraseñaForm: string): boolean {
     let rta: boolean = false;
 
-    
-    this.listaUsuarios.forEach((usuario : Usuario | any) => {
-      if(usuario.usuario == this.formLogin.get("usuario")?.value && 
-         usuario.contraseña == this.formLogin.get("contraseña")?.value){
-          
-          this.AuthService.logeado = usuario;
-          rta = true;          
+    for (const usuario of this.listaUsuarios) {  
+      if(usuario?.usuario === usuarioForm){
+        if(usuario?.contraseña === contraseñaForm){
+          rta = true;
+          break
+        }else{
+          rta = false;
+        }
       }
-    });
+    }
+
 
     return rta;
   }
 
   acceso():void{
-    this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com","BalderramaJhossy159",1);
-    this.Router.navigateByUrl("portafolio");
+    this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);
+    this.AuthService.estadoLogin = true;
+    this.Router.navigateByUrl('/portafolio');    
   }
 }

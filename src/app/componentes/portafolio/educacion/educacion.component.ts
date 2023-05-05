@@ -43,7 +43,7 @@ export class EducacionComponent implements OnInit {
     this.eduacionesPersona = [];
 
     for (const edu of this.eduaciones) {
-      if(edu.id_usuario == this.AuthService.logeado.getId_persona()){
+      if(edu.id_usuario == this.AuthService.logeado?.getId_persona()){
         this.eduacionesPersona.push(edu);
       }
     }

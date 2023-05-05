@@ -7,7 +7,7 @@
             </div>
                                    
             <div class="col-6" align="right">
-                <div *ngIf="AuthService.logeado != null" class="btn btn-add" align="center" (click)="openModal(modalExperienciaADD)">
+                <div *ngIf="AuthService.estadoLogin" class="btn btn-add" align="center" (click)="openModal(modalExperienciaADD)">
                     <fa-icon [icon]="faPlus"></fa-icon>                             
                 </div>   
             </div>
@@ -21,13 +21,13 @@
                 <div class="col-9">
                 </div>
                 <div class="col-1" style="margin-right: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-edit" (click)="openModal(modalExperiencia)"
+                    <div *ngIf="AuthService.estadoLogin" class="btn btn-edit" (click)="openModal(modalExperiencia)"
                         align="center">
                         <fa-icon [icon]="faEdit"></fa-icon>
                     </div>
                 </div>
                 <div class="col-1" style="margin-left: 10px;">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-clos" (click)="openModal(modalDelete)"
+                    <div *ngIf="AuthService.estadoLogin" class="btn btn-clos" (click)="openModal(modalDelete)"
                         align="center">
                         <fa-icon [icon]="faWindowClose"></fa-icon>
                     </div>

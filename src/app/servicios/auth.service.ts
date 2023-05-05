@@ -5,9 +5,9 @@ import { Usuario } from '../clases/usuario';
   providedIn: 'root'
 })
 export class AuthService {
-  
-  public logeado: Usuario = new Usuario("jhossymarbalderrama@gmail.com","BalderramaJhossy159",1);  
-  // public logeado:any;  
+    
+  public logeado: Usuario = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);  
+  public estadoLogin: boolean = false;
   
   constructor() { }
 }

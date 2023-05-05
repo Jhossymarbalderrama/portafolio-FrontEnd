@@ -4,7 +4,7 @@
         <div class="col-md-4">
             <div class="perfil" align="center">
                 <div class="foto-perfil">
-                    <div *ngIf="AuthService.logeado != null" class="btn btn-icon btn-edit btn-edit-foto-perfil" (click)="openModal(modalFotoPerfil)" align="center">
+                    <div *ngIf="AuthService.estadoLogin" class="btn btn-icon btn-edit btn-edit-foto-perfil" (click)="openModal(modalFotoPerfil)" align="center">
                         <fa-icon [icon]="faEdit"></fa-icon>
                     </div>
                     <div>
@@ -14,7 +14,7 @@
                 </div>
 
                 <div>
-                    <div *ngIf="AuthService.logeado != null" (click)="openModal(modalTitulo)"
+                    <div *ngIf="AuthService.estadoLogin" (click)="openModal(modalTitulo)"
                         class="btn btn-icon btn-edit btn-edit-titulo-perfil" align="center">
                         <fa-icon [icon]="faEdit"></fa-icon>
                     </div>
@@ -38,7 +38,7 @@
                                 </div>
                                                        
                                 <div class="col-6" align="right">
-                                    <div *ngIf="AuthService.logeado != null && this.persona?.sobre_mi == ''" class="btn btn-add btn-icon" align="center" (click)="openModal(modalDescripcionADD)">
+                                    <div *ngIf="AuthService.estadoLogin && this.persona?.sobre_mi == ''" class="btn btn-add btn-icon" align="center" (click)="openModal(modalDescripcionADD)">
                                         <fa-icon [icon]="faPlus"></fa-icon>                             
                                     </div>   
                                 </div>
@@ -46,13 +46,13 @@
                         </div>
 
                         <div class="col-1" style="margin-right: 10px;">
-                            <div *ngIf="AuthService.logeado != null  && this.persona?.sobre_mi != ''" (click)="openModal(modalDescripcion)" class="btn btn-icon btn-edit" align="center">
+                            <div *ngIf="AuthService.estadoLogin  && this.persona?.sobre_mi != ''" (click)="openModal(modalDescripcion)" class="btn btn-icon btn-edit" align="center">
                                 <fa-icon [icon]="faEdit"></fa-icon>
                             </div>
                         </div>
 
                         <div class="col-1" style="margin-left: 10px;">
-                            <div *ngIf="AuthService.logeado != null  && this.persona?.sobre_mi != ''" (click)="openModal(modalDelete)" class="btn btn-icon btn-clos" align="center">
+                            <div *ngIf="AuthService.estadoLogin  && this.persona?.sobre_mi != ''" (click)="openModal(modalDelete)" class="btn btn-icon btn-clos" align="center">
                                 <fa-icon [icon]="faWindowClose"></fa-icon>
                             </div>
                         </div>

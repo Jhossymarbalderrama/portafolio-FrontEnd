@@ -44,7 +44,7 @@ export class HardSoftSkillsComponent implements OnInit {
     this.hssPersona = [];
 
     for (const exp of this.hss) {
-      if(exp.id_usuario == this.AuthService.logeado.getId_persona()){
+      if(exp.id_usuario == this.AuthService.logeado?.getId_persona()){
         this.hssPersona.push(exp);
       }
     }

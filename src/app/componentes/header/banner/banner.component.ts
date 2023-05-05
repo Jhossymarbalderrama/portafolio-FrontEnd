@@ -22,11 +22,14 @@ export class BannerComponent implements OnInit {
     private NgbModal: NgbModal,
     private PersonasService: PersonasService
   ) { 
-    let id:any = this.AuthService.logeado.getId_persona();
+    let id:any = this.AuthService.logeado?.getId_persona();
 
-    this.PersonasService.getPersona(id).subscribe( dato =>{
-      this.persona = dato;
-    });
+    if(id){
+      this.PersonasService.getPersona(id).subscribe( dato =>{
+        // console.log("cargo datos");
+        this.persona = dato;
+      });
+    }
   }
 
   ngOnInit(): void {

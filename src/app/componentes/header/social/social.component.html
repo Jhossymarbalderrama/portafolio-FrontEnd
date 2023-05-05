@@ -37,8 +37,8 @@
 
         <li>
             <div>               
-                <button *ngIf="this.AuthService.logeado == null" class="btn btn-light px-5" type="button" (click)="onLogin()">Login</button>
-                <button *ngIf="this.AuthService.logeado != null" class="btn btn-light px-5" type="button" (click)="onLogout()">Logout</button>
+                <button *ngIf="!this.AuthService.estadoLogin" class="btn btn-light px-5" type="button" (click)="onLogin()">Login</button>
+                <button *ngIf="this.AuthService.estadoLogin" class="btn btn-light px-5" type="button" (click)="onLogout()">Logout</button>
                 
             </div>
         </li>

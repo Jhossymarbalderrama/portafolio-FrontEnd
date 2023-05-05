@@ -39,15 +39,7 @@ export class ProyectoComponent implements OnInit {
     this.NgbModal.dismissAll();
   }
 
-  getProyectosXpersona():void{
-    this.proyectosPersona = [];
-
-    for (const edu of this.proyectos) {
-      if(edu.id_usuario == this.AuthService.logeado.getId_persona()){
-        this.proyectosPersona.push(edu);
-      }
-    }
-  }
+ 
   
   actualizarDatos($event: boolean){
     if($event){
@@ -57,10 +49,20 @@ export class ProyectoComponent implements OnInit {
 
   getProyectos():void{
     setTimeout(() => {
-      this.ProyectosService.getAll().subscribe(datos =>{        
+      this.ProyectosService.getAll().subscribe(datos =>{               
         this.proyectos = datos;
         this.getProyectosXpersona();  
       });
     }, 500);
+  }
+
+  getProyectosXpersona():void{
+    this.proyectosPersona = [];
+
+    for (const edu of this.proyectos) {
+      if(edu.id_usuario == this.AuthService.logeado?.getId()){
+        this.proyectosPersona.push(edu);
+      }
+    }
   }
 }

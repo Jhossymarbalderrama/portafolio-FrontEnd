@@ -24,8 +24,7 @@ export class SocialComponent implements OnInit {
   }
   
   onLogout():void{    
-    let aux: any;
-    this.AuthService.logeado = aux;
+    this.AuthService.estadoLogin = false;
   }
 
   

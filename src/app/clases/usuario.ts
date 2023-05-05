@@ -4,10 +4,15 @@ export class Usuario {
     private contraseña: string;
     private id_persona?: number;
 
-    constructor(usuario: string, contraseña: string, id_persona?: number){
+    constructor(usuario: string, contraseña: string, id?: number,id_persona?: number){
+        this.id = id;
         this.usuario = usuario;
         this.contraseña = contraseña;
         this.id_persona = id_persona;
+    }
+
+    public getId(): any{
+        return this.id;
     }
 
     public getUsuario(): string{
