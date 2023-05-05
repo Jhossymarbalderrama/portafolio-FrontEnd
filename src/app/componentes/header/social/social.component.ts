@@ -36,6 +36,7 @@ export class SocialComponent implements OnInit {
 
   onLogout(): void {
     this.AuthService.estadoLogin = false;
+    localStorage.removeItem("usuario");
   }
   
   openModal(modal: any) {
