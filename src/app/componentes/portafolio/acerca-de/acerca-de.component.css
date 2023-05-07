@@ -7,6 +7,7 @@ p{
     font-weight: 600;
 }
 
+
 app-edit-foto-perfil, app-edit-acerca-de,
 app-edit-descripcion, app-modal-borrar-seccion{  
   width: 100%;
@@ -22,6 +23,7 @@ app-edit-descripcion, app-modal-borrar-seccion{
 }
 
 
+
 .container{    
     padding-top: 8em;
     padding-bottom: 2em;
@@ -35,6 +37,11 @@ app-edit-descripcion, app-modal-borrar-seccion{
         margin-top: -15.5em;
         margin-left: 5em;
     }
+
+    .navbar{
+        margin-top: -4em;
+        margin-bottom: 10px;
+    }
 }
 
 /*Dispositivos*/
@@ -44,7 +51,12 @@ app-edit-descripcion, app-modal-borrar-seccion{
         width: 12em;
         margin-top: -13em;
         margin-left: 28%;             
-    }    
+    } 
+    
+    .navbar{
+        margin-top: -0.2em;
+        margin-bottom: 10px;
+    }
 }
 
 .perfil_foto{

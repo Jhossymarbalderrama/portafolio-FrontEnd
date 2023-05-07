@@ -41,6 +41,7 @@ import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
 import { environment } from '../environments/environment';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { provideStorage,getStorage } from '@angular/fire/storage';
+import { NavbarComponent } from './componentes/navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
     SocialComponent, 
     LogoComponent, 
     BannerComponent, 
-    AcercaDeComponent, ExperienciaComponent, EducacionComponent, HardSoftSkillsComponent, ProyectoComponent, LogoFooterComponent, SocialFooterComponent, CardLoginComponent, CardRegistroComponent, EditAcercaDeComponent, EditDescripcionComponent, ModalBorrarSeccionComponent, EditExperienciaComponent, EditEducacionComponent, EditProyectoComponent, EditHssComponent, EditFotoPerfilComponent, EditBannerComponent    
+    AcercaDeComponent, ExperienciaComponent, EducacionComponent, HardSoftSkillsComponent, ProyectoComponent, LogoFooterComponent, SocialFooterComponent, CardLoginComponent, CardRegistroComponent, EditAcercaDeComponent, EditDescripcionComponent, ModalBorrarSeccionComponent, EditExperienciaComponent, EditEducacionComponent, EditProyectoComponent, EditHssComponent, EditFotoPerfilComponent, EditBannerComponent, NavbarComponent    
   ],
   imports: [
     BrowserModule,
