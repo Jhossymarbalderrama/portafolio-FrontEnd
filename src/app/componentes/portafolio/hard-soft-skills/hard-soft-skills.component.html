@@ -1,9 +1,9 @@
 
-<div class="container_hss">
+<div class="container_hss border">
     <div class="container">
         <div class="row container_titulo">
             <div class="col-9" align="left">
-                <h2>Hard Skills & Soft Skills</h2>
+                <h1 style="font-weight: bold">Hard Skills & Soft Skills</h1>
             </div>
 
             <div class="col-3" align="right">
@@ -32,11 +32,11 @@
                         </div>
                     </div>
                 </div>
-
-                <h4><strong>{{hss.titulo}}</strong></h4>
+                
+                <h3 style="font-weight: bold;">{{hss.titulo}}</h3>                
 
                 <circle-progress [percent]="hss.porcentaje" [radius]="100" [showUnits]="true" [showTitle]="true"
-                    [titleColor]="'black'" [titleFontSize]="'2.5em'" [titleFontWeight]="'bold'" [showSubtitle]="true"
+                    [titleColor]="'black'" [titleFontSize]="'3em'" [titleFontWeight]="'bold'" [showSubtitle]="true"
                     [subtitle]="hss?.detalle" [subtitleColor]="'black'" [subtitleFontSize]="'0.8em'"
                     [subtitleFontWeight]="'bold'" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
                     [outerStrokeColor]="'#00e408af'" [innerStrokeColor]="'#22d028af'" [animation]="true"

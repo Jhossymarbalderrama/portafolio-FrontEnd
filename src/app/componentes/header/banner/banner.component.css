@@ -30,7 +30,18 @@ img{
     margin:0px;
 }
 
-.banner{
-    width: 100% !important;
-    height: 373.611px !important;    
+/*Desktop*/
+@media (min-width:576px){
+    .banner{
+        width: 100% !important;
+        height: 373.611px !important;    
+    }    
+}
+
+/*Dispositivos*/
+@media (max-width:576px){
+    .banner{
+        width: 100% !important;
+        height: 200px !important;    
+    }    
 }

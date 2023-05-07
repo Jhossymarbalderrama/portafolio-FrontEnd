@@ -45,12 +45,7 @@ export class CardLoginComponent implements OnInit {
 
   onLogin(): void {
     if (this.formLogin.valid) {
-<<<<<<< HEAD
-      if (this.usuarioExist(this.formLogin.get("usuario")?.value, this.formLogin.get("contraseña")?.value)) {
-        this.AuthService.estadoLogin = true;   
-        this.modalClose();             
-      }
-=======
+
       let existeUsuario = this.usuarioExist(this.formLogin.get("usuario")?.value, this.formLogin.get("contraseña")?.value);
       this.loading = true;
 
@@ -58,12 +53,12 @@ export class CardLoginComponent implements OnInit {
         this.loading = false;
         if (existeUsuario) {
           this.AuthService.estadoLogin = true;
-          this.modalClose();          
+          this.modalClose();
         } else {
           this.usuarioNoExist = true;
-        }        
+        }
       }, 1000);
->>>>>>> developer
+
     }
   }
 
@@ -84,7 +79,7 @@ export class CardLoginComponent implements OnInit {
     for (const usuario of this.listaUsuarios) {
       if (usuario?.usuario === usuarioForm) {
         if (usuario?.contraseña === contraseñaForm) {
-          rta = true;                    
+          rta = true;
           break
         } else {
           rta = false;
@@ -92,30 +87,22 @@ export class CardLoginComponent implements OnInit {
       }
     }
 
-    
+
     return rta;
   }
 
-<<<<<<< HEAD
-  acceso():void{
-    this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);
-    this.AuthService.estadoLogin = true; 
-    this.saveLogin(); 
-=======
+
   acceso(): void {
     this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com", "Balderrama159", 1, 1);
     this.AuthService.estadoLogin = true;
-    //this.Router.navigateByUrl('/portafolio');    
->>>>>>> developer
     this.modalClose();
   }
 
-  saveLogin(){
+  saveLogin() {
     let usuario: any = this.AuthService.logeado;
     let passwCodif = usuario.contraseña;
 
-    usuario.contraseña = btoa(passwCodif);    
-    localStorage.setItem('usuario',JSON.stringify(usuario));
-    // console.log(atob(usuario.contraseña));
+    usuario.contraseña = btoa(passwCodif);
+    localStorage.setItem('usuario', JSON.stringify(usuario));
   }
 }

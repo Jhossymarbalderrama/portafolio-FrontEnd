@@ -18,3 +18,15 @@ app-footer{
     -ms-user-select: none; 
     user-select: none;   
 }
+
+button {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	font-size: 50px;
+	text-align: center;
+	border-radius: 100%;
+	outline: none;	
+	color: #002c79;
+	background-color: transparent;
+  }

@@ -43,12 +43,15 @@ export class EditHssComponent implements OnInit {
       this.detalle = this.hss.detalle;
       this.porcentaje = this.hss.porcentaje;
       this.setPorcentajeRange(this.hss.porcentaje);
+      this.estadoFormAlta = false;
     }
   }
 
   onUpdateHSS(): void {
     if (this.formHSS.valid) {
+      console.log("FORM VALIDO");
       if (this.estadoFormAlta != true) {
+        console.log("MODIFICAR");
         let hssUpdate = this.hss;
 
         hssUpdate.titulo = this.formHSS.get("titulo")?.value;
@@ -59,6 +62,7 @@ export class EditHssComponent implements OnInit {
 
         this.modalClose();
       }else{
+        console.log("ALTA");
         this.onAddHSS();
       }
     }

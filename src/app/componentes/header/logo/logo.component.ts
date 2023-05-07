@@ -14,8 +14,4 @@ export class LogoComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
-  onHome():void{
-    this.Router.navigateByUrl("/portafolio");
-  }
 }

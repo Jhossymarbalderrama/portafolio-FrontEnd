@@ -35,7 +35,7 @@
         <li>
             <div style="margin-left: 40px;">               
                 <button *ngIf="!this.AuthService.estadoLogin" class="btn btn-light px-5" type="button" (click)="openModal(modalLogin)">Login</button>
-                <button *ngIf="this.AuthService.estadoLogin" class="btn btn-light px-5" type="button" (click)="onLogout()">Logout</button>                
+                <button *ngIf="this.AuthService.estadoLogin" class="btn btn-danger px-5" type="button" (click)="onLogout()">Logout</button>                
             </div>
         </li>
     </ul>

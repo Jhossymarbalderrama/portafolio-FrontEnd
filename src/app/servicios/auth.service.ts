@@ -13,8 +13,7 @@ export class AuthService {
 
     let aux: any = localStorage.getItem("usuario");
     let usuario : any = JSON.parse(aux);
-
-    console.log(usuario);
+    
     if(usuario){
       let passwCodif : any = usuario.contraseña;
       console.log(passwCodif);      

@@ -3,12 +3,7 @@
     color: #393939;     
 }
 
-h2{
-    font-weight: bold;
-}
-
 p{    
-    font-size: 18px;
     font-weight: 600;
 }
 
@@ -32,6 +27,7 @@ app-edit-descripcion, app-modal-borrar-seccion{
     padding-bottom: 2em;
 }
 
+/*Desktop*/
 @media (min-width:576px){
     .perfil{    
         z-index: 4;    
@@ -41,13 +37,13 @@ app-edit-descripcion, app-modal-borrar-seccion{
     }
 }
 
-
+/*Dispositivos*/
 @media (max-width:576px){
     .perfil{    
         z-index: 4;    
         width: 12em;
         margin-top: -13em;
-        margin-left: 20%;             
+        margin-left: 28%;             
     }    
 }
 

@@ -25,13 +25,13 @@
         <div class="row" align="center">
             <div class="pt-4">
                 <button 
-                    *ngIf="this.estadoFormAlta" 
+                    *ngIf="this.hss == null || this.hss == undefined" 
                     type="submit" class="btn btn-success btn-block w-50" 
                     [disabled]="formHSS.invalid"
                     mat-raised-button color="primary" [class.spinner]="loading" [disabled]="formHSS.invalid"
                     >Alta</button>
 
-                <button *ngIf="!this.estadoFormAlta" type="submit" class="btn btn-primary btn-block w-50" [disabled]="formHSS.invalid">Modificar</button>
+                <button *ngIf="this.hss != null || this.hss != undefined" type="submit" class="btn btn-primary btn-block w-50" [disabled]="formHSS.invalid">Modificar</button>
             </div>
         </div>
     </form>

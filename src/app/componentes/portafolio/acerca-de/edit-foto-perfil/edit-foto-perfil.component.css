@@ -1,5 +1,5 @@
 .perfil_foto{
-  
+
     width: 230.382px !important;
     height: 233.646px !important;
 
@@ -11,8 +11,9 @@
 .foto-perfil{
   -webkit-user-select: none; 
   -ms-user-select: none; 
-  user-select: none;   
+  user-select: none;  
 }
+
 
 .form-control{
     background-color: #1f56b5ab;

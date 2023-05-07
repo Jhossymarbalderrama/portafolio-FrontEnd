@@ -16,13 +16,14 @@ app-edit-educacion, app-modal-borrar-seccion{
       background-size: cover;
 }
   
-h2{
+p{    
     font-weight: 600;
 }
 
-p{
-    font-size: 18px;
-    font-weight: 600;
+hr {
+    color: #181818;
+    height: 0px;
+    border:1px dashed;
 }
 
 .container_educacion{

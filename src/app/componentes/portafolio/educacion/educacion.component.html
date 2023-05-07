@@ -1,10 +1,9 @@
-<div class="container_educacion">
-    <hr>
+<div class="container_educacion border">
     <div class="container text-left py-4">
         <!-- Titulo Seccion -->
         <div class="row container_titulo">
             <div class="col-9" align="left">
-                <h2>Formación Académica</h2>
+                <h1 style="font-weight: bold">Formación Académica</h1>
             </div>
 
             <div class="col-3" align="right">
@@ -15,8 +14,8 @@
             </div>
         </div>
 
-        <!-- Experiencias -->
-        <div class="row py-2" *ngFor="let educacion of this.eduacionesPersona">
+        <!-- Educaciones -->
+        <div class="row px-3" *ngFor="let educacion of this.eduacionesPersona">
             <hr>
 
             <div class="row">
@@ -47,7 +46,7 @@
             </div>
 
             <div class="col-12 col-md-7">
-                <div>
+                <div>                    
                     <h3 style="font-weight: bold;">{{educacion?.nombre_establecimiento}}</h3>
                     <p>
                         {{educacion?.titulo}}
