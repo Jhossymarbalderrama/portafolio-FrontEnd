@@ -24,7 +24,9 @@
 
         <div class="row" align="center">
             <div class="pt-4">
-                <button type="submit" class="btn btn-primary btn-block w-50" [disabled]="formPersona.invalid">Modificar</button>
+                <button type="submit" class="btn btn-primary btn-block w-50" [disabled]="formPersona.invalid" 
+                mat-raised-button color="primary" [class.spinner]="loading" 
+                >Modificar</button>
             </div>
         </div>
     </form>

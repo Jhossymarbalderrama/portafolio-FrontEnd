@@ -11,19 +11,21 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 })
 export class EditAcercaDeComponent implements OnInit {
 
-  @Input () persona: Persona | any;
+  @Input() persona: Persona | any;
 
   public formPersona: FormGroup;
 
-  titulo:any = "";
-  nombre:any = "";
-  apellido:any = "";
-  
+  public titulo: any = "";
+  public nombre: any = "";
+  public apellido: any = "";
+
+  public loading = false;
+
   constructor(
     private PersonasService: PersonasService,
     private NgbModal: NgbModal,
     private FormBuilder: FormBuilder
-  ) { 
+  ) {
     this.formPersona = this.FormBuilder.group({
       titulo: ['', [Validators.required]],
       nombre: ['', [Validators.required]],
@@ -37,8 +39,9 @@ export class EditAcercaDeComponent implements OnInit {
     this.apellido = this.persona.apellido;
   }
 
-  onUpdatePersona():void{
-    if(this.formPersona.valid){
+  onUpdatePersona(): void {
+
+    if (this.formPersona.valid) {
       let personaUpdate = this.persona;
 
       personaUpdate.titulo = this.formPersona.get("titulo")?.value;
@@ -47,8 +50,18 @@ export class EditAcercaDeComponent implements OnInit {
 
       this.PersonasService.update(personaUpdate).subscribe();
 
-      this.modalClose();
+      this.procesoLoading();      
     }
+
+  }
+
+  procesoLoading() {
+    this.loading = true;
+
+    setTimeout(() => {
+      this.loading = false;
+      this.modalClose()
+    }, 1300);
   }
 
   modalClose() {

@@ -14,9 +14,9 @@ export class EditFotoPerfilComponent implements OnInit {
 
   @Input () persona : Persona | any;
 
-  url_foto: string ="";
+  public url_foto: string ="";
+  public loading = false;
 
-  loading = false;
   constructor(
     private ImageService: ImageService,
   ) { 
@@ -33,6 +33,6 @@ export class EditFotoPerfilComponent implements OnInit {
     this.ImageService.uploadImagePerfil(file, this.persona);
     setTimeout(() => {
       this.loading = false;
-    }, 2000);
+    }, 1300);
   }
 }

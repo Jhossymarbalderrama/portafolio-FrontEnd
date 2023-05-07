@@ -1,11 +1,12 @@
 *{
-    font-family: monospace;
+    font-family: monospace;	
 }
 
-/* .container{
-	padding: 1em;
+span{
+	color: rgb(255, 22, 22);
+	padding-left: 10px;
+	font-size: small;
 }
- */
 
 .registro{
 	cursor: pointer;
@@ -18,4 +19,24 @@
 
 .btn{
 	font-weight: bold;
+}
+
+@keyframes spinner {
+	to {transform: rotate(360deg);}
+}
+
+.spinner:before {
+	content: '';
+	box-sizing: border-box;
+	position: absolute;
+	top: 48%;
+	left: 45%;
+	width: 60px;
+	height: 60px;
+	margin-top: -10px;
+	margin-left: -10px;
+	border-radius: 50%;
+	border: 6px solid #2b61bf74;
+	border-top-color: #0950ca;
+	animation: spinner .8s linear infinite;
 }
