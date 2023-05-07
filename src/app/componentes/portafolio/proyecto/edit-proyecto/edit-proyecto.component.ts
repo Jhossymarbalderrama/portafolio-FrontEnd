@@ -17,12 +17,12 @@ export class EditProyectoComponent implements OnInit {
 
   public formProyecto: FormGroup;
 
-  nombre_proyecto:string = "";
-  descripcion:string = "";
-  sistema:string = "";
+  public nombre_proyecto:string = "";
+  public descripcion:string = "";
+  public sistema:string = "";
 
-  estadoFormAlta: boolean = true;
-  loading = false;
+  public estadoFormAlta: boolean = true;
+  public loading = false;
 
   constructor(
     private ProyectosService:ProyectosService,

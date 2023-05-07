@@ -18,14 +18,14 @@ export class EditExperienciaComponent implements OnInit {
 
   public formExperiencia: FormGroup;
 
-  nombre_empresa: string = "";
-  descripcion: string = "";
-  aneos: string = "";
-  direccion: string = "";
-  url_logo: string = "";
+  public nombre_empresa: string = "";
+  public descripcion: string = "";
+  public aneos: string = "";
+  public direccion: string = "";
+  public url_logo: string = "";
 
-  estadoFormAlta: boolean = true;
-  loading = false;
+  public estadoFormAlta: boolean = true;
+  public loading = false;
 
   constructor(
     private ExperienciasService: ExperienciasService,

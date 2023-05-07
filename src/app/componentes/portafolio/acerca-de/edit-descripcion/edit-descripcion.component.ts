@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Persona } from 'src/app/clases/persona';
 import { PersonasService } from 'src/app/servicios/personas.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import { AuthService } from 'src/app/servicios/auth.service';
 
 @Component({
   selector: 'app-edit-descripcion',
@@ -16,10 +15,9 @@ export class EditDescripcionComponent implements OnInit {
   @Output () cambios = new EventEmitter();
   
   public formPersona: FormGroup;
-  sobre_mi:any = "";
-  
-  estadoFormAlta: boolean = true;
-  loading = false;
+  public sobre_mi:any = "";
+  public estadoFormAlta: boolean = true;
+  public loading = false;
 
   constructor(
     private PersonasService: PersonasService,
@@ -55,12 +53,10 @@ export class EditDescripcionComponent implements OnInit {
   onAddSobre_mi():void{
     let personaUpdate = this.persona;
 
-      personaUpdate.sobre_mi = this.formPersona.get("sobre_mi")?.value;
-
+    personaUpdate.sobre_mi = this.formPersona.get("sobre_mi")?.value;
 
     this.PersonasService.update(personaUpdate).subscribe();
     this.cambiosProyectos();
-    
     this.procesoLoading();
   }
 

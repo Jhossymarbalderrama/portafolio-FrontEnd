@@ -18,15 +18,15 @@ export class EditEducacionComponent implements OnInit {
 
   public formEducacion: FormGroup;
 
-  nombre_establecimiento: string = "";
-  titulo: string = "";
-  descripcion: string = "";
-  aneos: string = "";
-  direccion: string = "";
-  url_logo: string = "";
+  public nombre_establecimiento: string = "";
+  public titulo: string = "";
+  public descripcion: string = "";
+  public aneos: string = "";
+  public direccion: string = "";
+  public url_logo: string = "";
 
-  estadoFormAlta: boolean = true;
-  loading = false;
+  public estadoFormAlta: boolean = true;
+  public loading = false;
 
   constructor(
     private EducacionesService: EducacionesService,

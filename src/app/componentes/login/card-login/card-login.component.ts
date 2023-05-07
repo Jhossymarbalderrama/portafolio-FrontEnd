@@ -16,6 +16,10 @@ export class CardLoginComponent implements OnInit {
   public formLogin: FormGroup;
   private listaUsuarios: any = [];
   private listaAux: any = [];
+
+  public usuarioNoExist: boolean = false;
+  public loading: boolean = false;
+
   constructor(
     private Router: Router,
     private FormBuilder: FormBuilder,
@@ -24,7 +28,7 @@ export class CardLoginComponent implements OnInit {
     private NgbModal: NgbModal
   ) {
     this.formLogin = this.FormBuilder.group({
-      usuario: ['', [Validators.required, Validators.email]],
+      usuario: ['', [Validators.required]],
       contraseña: ['', [Validators.required]]
     });
 
@@ -41,10 +45,25 @@ export class CardLoginComponent implements OnInit {
 
   onLogin(): void {
     if (this.formLogin.valid) {
+<<<<<<< HEAD
       if (this.usuarioExist(this.formLogin.get("usuario")?.value, this.formLogin.get("contraseña")?.value)) {
         this.AuthService.estadoLogin = true;   
         this.modalClose();             
       }
+=======
+      let existeUsuario = this.usuarioExist(this.formLogin.get("usuario")?.value, this.formLogin.get("contraseña")?.value);
+      this.loading = true;
+
+      setTimeout(() => {
+        this.loading = false;
+        if (existeUsuario) {
+          this.AuthService.estadoLogin = true;
+          this.modalClose();          
+        } else {
+          this.usuarioNoExist = true;
+        }        
+      }, 1000);
+>>>>>>> developer
     }
   }
 
@@ -61,25 +80,33 @@ export class CardLoginComponent implements OnInit {
   usuarioExist(usuarioForm: string, contraseñaForm: string): boolean {
     let rta: boolean = false;
 
-    for (const usuario of this.listaUsuarios) {  
-      if(usuario?.usuario === usuarioForm){
-        if(usuario?.contraseña === contraseñaForm){
-          rta = true;
+
+    for (const usuario of this.listaUsuarios) {
+      if (usuario?.usuario === usuarioForm) {
+        if (usuario?.contraseña === contraseñaForm) {
+          rta = true;                    
           break
-        }else{
+        } else {
           rta = false;
         }
       }
     }
 
-
+    
     return rta;
   }
 
+<<<<<<< HEAD
   acceso():void{
     this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);
     this.AuthService.estadoLogin = true; 
     this.saveLogin(); 
+=======
+  acceso(): void {
+    this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com", "Balderrama159", 1, 1);
+    this.AuthService.estadoLogin = true;
+    //this.Router.navigateByUrl('/portafolio');    
+>>>>>>> developer
     this.modalClose();
   }
 

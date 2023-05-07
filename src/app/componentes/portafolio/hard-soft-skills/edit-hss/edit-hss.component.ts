@@ -17,12 +17,12 @@ export class EditHssComponent implements OnInit {
 
   public formHSS: FormGroup;
 
-  titulo: string = "";
-  detalle: string = "";
-  porcentaje: string = "";
+  public titulo: string = "";
+  public detalle: string = "";
+  public porcentaje: string = "";
 
-  estadoFormAlta: boolean = true;
-  loading = false;
+  public estadoFormAlta: boolean = true;
+  public loading = false;
 
   constructor(
     private HardSoftSkillsService: HardSoftSkillsService,
