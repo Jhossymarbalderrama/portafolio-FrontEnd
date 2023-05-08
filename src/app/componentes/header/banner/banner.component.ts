@@ -24,7 +24,7 @@ export class BannerComponent implements OnInit {
   ) { 
     let id:any = this.AuthService.logeado?.getId_persona();
 
-    if(id){
+    if(this.AuthService.logeado?.getId_persona()){
       this.PersonasService.getPersona(id).subscribe( dato =>{
         // console.log("cargo datos");
         this.persona = dato;

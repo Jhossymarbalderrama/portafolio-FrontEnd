@@ -20,11 +20,6 @@ export class UsuariosService {
     return this.http.get<Usuario>(this.url+"listar");
   }
 
-  //Traer Usuario
-  getUsuario(id:number):Observable<Usuario>{
-    return this.http.get<Usuario>(this.url+"listar/"+id);
-  }
-
   //Alta 
   create(usuario: Usuario): Observable<Usuario>{
     return this.http.post<Usuario>(this.url+"alta", usuario);

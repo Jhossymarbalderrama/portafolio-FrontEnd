@@ -7,9 +7,8 @@ import { UsuariosService } from './usuarios.service';
 })
 export class AuthService {
     
-  // public logeado: Usuario = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);    
-  public logeado: any;
-  public estadoLogin: boolean = false;
+  public logeado: Usuario = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);    
+   public estadoLogin: boolean = false;
   
   constructor(
     private UsuariosService: UsuariosService
@@ -28,10 +27,5 @@ export class AuthService {
       this.logeado = usuarioLogeado;
       this.estadoLogin = true;
     }
-
-    this.UsuariosService.getUsuario(1).subscribe(usuario => {
-      this.logeado = usuario;
-    });
-
   }
 }
