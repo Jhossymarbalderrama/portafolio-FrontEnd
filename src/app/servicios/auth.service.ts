@@ -7,8 +7,8 @@ import { UsuariosService } from './usuarios.service';
 })
 export class AuthService {
     
-  public logeado: Usuario = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);    
-   public estadoLogin: boolean = true;
+  public logeado: Usuario = new Usuario("jhossymarbalderrama","Jhossymarbalderrama159",1,1);    
+   public estadoLogin: boolean = false;
   
   constructor(
     private UsuariosService: UsuariosService
