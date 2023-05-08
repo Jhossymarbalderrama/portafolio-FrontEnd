@@ -1,15 +1,19 @@
 import { Injectable } from '@angular/core';
 import { Usuario } from '../clases/usuario';
+import { UsuariosService } from './usuarios.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
     
-  public logeado: Usuario = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);  
+  // public logeado: Usuario = new Usuario("jhossymarbalderrama@gmail.com","Balderrama159",1,1);    
+  public logeado: any;
   public estadoLogin: boolean = false;
   
-  constructor() { 
+  constructor(
+    private UsuariosService: UsuariosService
+  ) { 
 
     let aux: any = localStorage.getItem("usuario");
     let usuario : any = JSON.parse(aux);
@@ -24,5 +28,10 @@ export class AuthService {
       this.logeado = usuarioLogeado;
       this.estadoLogin = true;
     }
+
+    this.UsuariosService.getUsuario(1).subscribe(usuario => {
+      this.logeado = usuario;
+    });
+
   }
 }
