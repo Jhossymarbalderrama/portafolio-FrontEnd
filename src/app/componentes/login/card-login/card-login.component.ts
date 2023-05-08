@@ -52,6 +52,7 @@ export class CardLoginComponent implements OnInit {
       setTimeout(() => {
         this.loading = false;
         if (existeUsuario) {
+          this.saveLogin();
           this.AuthService.estadoLogin = true;
           this.modalClose();
         } else {
