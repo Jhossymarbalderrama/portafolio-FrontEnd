@@ -49,7 +49,7 @@ app-edit-descripcion, app-modal-borrar-seccion{
     .perfil{    
         z-index: 4;    
         width: 12em;
-        margin-top: -15.5em;
+        margin-top: -14em;
         /* margin-left: 22%;              */
     } 
     
@@ -129,8 +129,7 @@ app-edit-descripcion, app-modal-borrar-seccion{
 }
 
 .btn-edit-foto-perfil{  
-    position: absolute;  
-    margin-top: 3.5em;     
+    position: absolute;      
     margin-left: -2px;
   }
 
