@@ -92,11 +92,11 @@ export class CardLoginComponent implements OnInit {
   }
 
 
-  acceso(): void {
-    this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com", "Balderrama159", 1, 1);
-    this.AuthService.estadoLogin = true;
-    this.modalClose();
-  }
+  // acceso(): void {
+  //   this.AuthService.logeado = new Usuario("jhossymarbalderrama@gmail.com", "Balderrama159", 1, 1);
+  //   this.AuthService.estadoLogin = true;
+  //   this.modalClose();
+  // }
 
   saveLogin() {
     let usuario: any = this.AuthService.logeado;

@@ -14,6 +14,10 @@ hr {
     border:1px dashed;
 }
 
+.row {
+    margin:0px;
+}
+
 app-edit-proyecto, app-modal-borrar-seccion{  
     width: 100%;
       height: 100%;

@@ -18,12 +18,23 @@
   .btn{
     width: 110px;
   }
+
+  .col{    
+    min-width: 100%;    
+    font-size: 12px;
+  }
+
+  a, .btn{
+    min-width: 100%;
+  }
 }
 
 .btn{
   color: black;
+  border: 2px solid black;
 }
 
 .btn:hover{
-  color: white;
+  color: blue;
+  transform: scale(1.1);
 }

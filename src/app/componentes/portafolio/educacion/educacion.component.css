@@ -75,3 +75,7 @@ hr {
 .btn-add{   
     background-color: rgba(10, 201, 0, 0.761); 
 }
+
+.row {
+    margin:0px;
+}

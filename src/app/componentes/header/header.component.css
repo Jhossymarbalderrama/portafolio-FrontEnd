@@ -12,9 +12,8 @@
     
 }
 
+/*Desktop*/
 @media (min-width:576px){
-  
-
     app-logo{
         padding-left: 15%;
         padding-right: 5%;
@@ -29,7 +28,7 @@
     }    
 }
 
-
+/*Dispositivos*/
 @media (max-width:576px){
 
     .row{
@@ -40,17 +39,9 @@
         justify-content: center !important;
     }
 
-    /* app-logo{
-        padding-left: 10%;
-        padding-right: 5%;
-    }
-    
-    app-social{
-        float: right;
-        padding-right: 20%; 
-        padding-left: 5%;
-        padding-top: 2%;
-    }    */
+    /* .button{
+        margin-left: 1em;
+    } */
 }
 
 

@@ -1,73 +1,81 @@
 <div class="container text-left border">
-    <div class="row">
+    <div class="row row-cols-1">
 
         <div class="col-md-4">
-            <div class="perfil" align="center">
-                <div class="foto-perfil">
-                    <div *ngIf="AuthService.estadoLogin" class="btn btn-icon btn-edit btn-edit-foto-perfil" (click)="openModal(modalFotoPerfil)" align="center">
-                        <fa-icon [icon]="faEdit"></fa-icon>
+            <div class="centrar">
+                <div class="perfil">
+                    <div class="foto-perfil">
+                        <div *ngIf="AuthService.estadoLogin" class="btn btn-icon btn-edit btn-edit-foto-perfil"
+                            (click)="openModal(modalFotoPerfil)" align="center">
+                            <fa-icon [icon]="faEdit"></fa-icon>
+                        </div>
+                        <div>
+                            <img src="{{this.persona?.url_foto_perfil}}" alt="" class="perfil_foto">
+                        </div>
                     </div>
-                    <div>
-                        <img src="{{this.persona?.url_foto_perfil}}" alt="" 
-                            class="perfil_foto">
-                    </div>
-                </div>
 
-                <div>
-                    <div *ngIf="AuthService.estadoLogin" (click)="openModal(modalTitulo)"
-                        class="btn btn-icon btn-edit btn-edit-titulo-perfil" align="center">
-                        <fa-icon [icon]="faEdit"></fa-icon>
-                    </div>
-                    <div class="perfil_info" align="center">
-                        <p class="perfil_titulo">{{this.persona?.titulo}}</p>
-                        <p class="perfil_nombre">{{this.persona?.apellido}} {{this.persona?.nombre}}</p>
+                    <div>
+                        <div *ngIf="AuthService.estadoLogin" (click)="openModal(modalTitulo)"
+                            class="btn btn-icon btn-edit btn-edit-titulo-perfil" align="center">
+                            <fa-icon [icon]="faEdit"></fa-icon>
+                        </div>
+
+                        <div>
+                            <p class="perfil_titulo">{{this.persona?.titulo}}</p>
+                            <p class="perfil_nombre">{{this.persona?.apellido}} {{this.persona?.nombre}}</p>
+                        </div>
+
                     </div>
                 </div>
             </div>
         </div>
-        
+
 
         <div class="col-12 col-md-8">
             <div class="navbar">
                 <app-navbar></app-navbar>
             </div>
 
-            <div class="perfil_info_sobre_mi">                
-                <div>                                                        
+            <div class="perfil_info_sobre_mi">
+                <div>
                     <div class="row">
-                        <div class="col-8">                            
-                            <div class="row">                                                                                                
-                                <div class="col-9" align="left">
-                                    <h1 style="font-weight: bold;">Sobre Mí</h1>
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-9" style="margin-left: -2em !important; width: 180px;">
+                                    <h1 style="font-weight: bold; width: 200px;">Sobre Mí</h1>
                                 </div>
-                                                       
+
                                 <div class="col-3" align="right">
-                                    <div *ngIf="AuthService.estadoLogin && this.persona?.sobre_mi == ''" class="btn btn-add btn-icon" align="center" (click)="openModal(modalDescripcionADD)">
-                                        <fa-icon [icon]="faPlus"></fa-icon>                             
-                                    </div>   
+                                    <div *ngIf="AuthService.estadoLogin && this.persona?.sobre_mi == ''"
+                                        class="btn btn-add btn-icon" align="center"
+                                        (click)="openModal(modalDescripcionADD)">
+                                        <fa-icon [icon]="faPlus"></fa-icon>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-1" style="margin-right: 10px;">
-                            <div *ngIf="AuthService.estadoLogin  && this.persona?.sobre_mi != ''" (click)="openModal(modalDescripcion)" class="btn btn-icon btn-edit" align="center">
+                            <div *ngIf="AuthService.estadoLogin  && this.persona?.sobre_mi != ''"
+                                (click)="openModal(modalDescripcion)" class="btn btn-icon btn-edit" align="center">
                                 <fa-icon [icon]="faEdit"></fa-icon>
                             </div>
                         </div>
 
                         <div class="col-1" style="margin-left: 10px;">
-                            <div *ngIf="AuthService.estadoLogin  && this.persona?.sobre_mi != ''" (click)="openModal(modalDelete)" class="btn btn-icon btn-clos" align="center">
+                            <div *ngIf="AuthService.estadoLogin  && this.persona?.sobre_mi != ''"
+                                (click)="openModal(modalDelete)" class="btn btn-icon btn-clos" align="center">
                                 <fa-icon [icon]="faWindowClose"></fa-icon>
                             </div>
                         </div>
                     </div>
-                    <p>                        
+                    <p>
                         {{this.persona?.sobre_mi}}
                     </p>
                 </div>
             </div>
         </div>
-        
+
     </div>
 </div>
 
@@ -110,11 +118,8 @@
         <button type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
     </div>
 
-    <app-modal-borrar-seccion
-    [elementoBaja]='{
+    <app-modal-borrar-seccion [elementoBaja]='{
         objeto: persona,
         tipo: "SOBRE_MI"
-    }'
-    (cambios)="actualizarDatos($event)"
-    ></app-modal-borrar-seccion>
+    }' (cambios)="actualizarDatos($event)"></app-modal-borrar-seccion>
 </ng-template>

@@ -9,7 +9,7 @@ import { RedesSociales } from '../clases/redes-sociales';
 export class RedesSocialesService {
 
   private url: string = "http://localhost:8080/api/redessociales/";
-  // private url: string = "https://portafolio-backend-balderrama.onrender.com/api/usuarios/";
+  //private url: string = "https://portafolio-backend-balderrama.onrender.com/api/usuarios/";
 
   constructor(
     private http: HttpClient

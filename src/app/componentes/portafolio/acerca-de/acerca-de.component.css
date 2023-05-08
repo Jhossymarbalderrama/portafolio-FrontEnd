@@ -35,7 +35,7 @@ app-edit-descripcion, app-modal-borrar-seccion{
         z-index: 4;    
         width: 12em;
         margin-top: -15.5em;
-        margin-left: 5em;
+        /* margin-left: 5em; */
     }
 
     .navbar{
@@ -50,7 +50,7 @@ app-edit-descripcion, app-modal-borrar-seccion{
         z-index: 4;    
         width: 12em;
         margin-top: -13em;
-        margin-left: 28%;             
+        /* margin-left: 22%;              */
     } 
     
     .navbar{
@@ -69,20 +69,26 @@ app-edit-descripcion, app-modal-borrar-seccion{
 }
 
 .foto-perfil{
-  -webkit-user-select: none; 
-  -ms-user-select: none; 
-  user-select: none;   
-}
+    -webkit-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none;   
 
-.perfil_info{    
-    width: 240px;
-    text-align: center;
-        
-    font-weight: bold;        
+    align-items: center !important;
+
+    text-align: center !important;
+    display: flex;
+    justify-content: center !important;
+}
+.centrar{
+    align-items: center !important;
+    text-align: center !important;
+    display: flex;
+    justify-content: center !important;
 }
 
 .perfil_titulo{
-    font-size: 18px;  
+    font-size: 18px; 
+    font-weight: bold; 
 }
 
 .perfil_nombre{
@@ -135,4 +141,8 @@ app-edit-descripcion, app-modal-borrar-seccion{
 
 .btn-add{   
   background-color: rgba(10, 201, 0, 0.761); 
+}
+
+.row {
+    margin:0px;
 }
