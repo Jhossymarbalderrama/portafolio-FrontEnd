@@ -1,7 +1,7 @@
 *{
   font-family: monospace;
-  color: #494949;
-  font-weight: 600;
+  color: #303030 !important;  
+  text-shadow: black 1px 0 1px !important;
 }
 
 
@@ -32,9 +32,14 @@
 .btn{
   color: black;
   border: 2px solid black;
+
+  box-shadow: 0px -5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
 .btn:hover{
-  color: blue;
+  font-weight: bold;
+  
+  color: #1a2b4ef3 !important;
+  text-shadow: #e1e0e0 1px 0 2px !important;
   transform: scale(1.1);
 }

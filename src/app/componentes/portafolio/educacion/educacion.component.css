@@ -1,6 +1,7 @@
 *{
     font-family: monospace;
-    color: #494949;
+    color: #494949;  
+    text-shadow: #393939 0.5px 0 0.5px;
 }
 
 app-edit-educacion, app-modal-borrar-seccion{  

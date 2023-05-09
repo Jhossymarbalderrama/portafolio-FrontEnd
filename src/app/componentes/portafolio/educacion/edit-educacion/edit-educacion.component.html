@@ -44,12 +44,12 @@
 
                 <!-- Estoy modificando -->
                 <div *ngIf="this.educacion != null || this.educacion != undefined" class="input-group pt-3">                                            
-                    <input type="file" class="form-control" (change)="subirLogo_ModificacionEducacion($event)">
+                    <input type="file" class="form-control"  accept="image/png,image/jpeg"  (change)="subirLogo_ModificacionEducacion($event)">
                 </div> 
 
                 <!-- Estoy dando de Alta -->
                 <div *ngIf="this.educacion == null || this.educacion == undefined" class="input-group pt-3">                                            
-                    <input type="file" class="form-control" (change)="subirLogo_AltaEducacion($event)">
+                    <input type="file" class="form-control"  accept="image/png,image/jpeg"  (change)="subirLogo_AltaEducacion($event)">
                 </div>
             </div>
         </div>

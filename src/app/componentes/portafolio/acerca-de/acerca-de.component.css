@@ -1,6 +1,7 @@
 *{
     font-family: monospace;
-    color: #393939;     
+    color: #494949;  
+    text-shadow: #393939 0.5px 0 0.5px;
 }
 
 p{    

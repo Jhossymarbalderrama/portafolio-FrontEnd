@@ -1,10 +1,15 @@
 *{
     font-family: monospace;
     /* color: #393939; */
-    color: #393939;
+    /* color: #393939; */
+    color: #ffffff;  
+    text-shadow: #0e0e0e 1px 0 10px; 
+    /* color: #e6e6e6;     */
 }
 
 app-edit-experiencia,app-modal-borrar-seccion{  
+    color: black;
+    text-shadow: none;
     width: 100%;
       height: 100%;
       
@@ -25,15 +30,24 @@ p{
 
 
 hr {
-    color: #181818;
+    /* color: #181818; */
+    color: #F1F6F9;
+
     height: 0px;
     border:1px dashed;
 }
 
 .container_experiencias{
-    padding: 1em;
+    /* padding: 1em; */
     /* background-color: #00348e2b; */
-    background-color: #03338536;
+    /* background-color: #03338536;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    border: 1.5px solid rgba(209, 213, 219, 0.3); */
+
+    /* background-color: #394867c7; */
+    background-color: #1a2b4ead;
+    /* background-color: #1a2b4ebf; */
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     border: 1.5px solid rgba(209, 213, 219, 0.3);
