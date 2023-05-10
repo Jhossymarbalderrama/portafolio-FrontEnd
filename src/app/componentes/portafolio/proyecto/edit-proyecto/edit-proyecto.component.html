@@ -31,7 +31,11 @@
                     [disabled]="formProyecto.invalid"
                     mat-raised-button color="primary" [class.spinner]="loading" [disabled]="formProyecto.invalid"
                     >Alta</button>
-                <button *ngIf="!this.estadoFormAlta" type="submit" class="btn btn-warning btn-block w-50" [disabled]="formProyecto.invalid">Modificar</button>
+
+                <button *ngIf="!this.estadoFormAlta" type="submit" 
+                class="btn btn-warning btn-block w-50" 
+                mat-raised-button color="primary" [class.spinner]="loading"
+                [disabled]="formProyecto.invalid">Modificar</button>
             </div>
         </div>
     </form>

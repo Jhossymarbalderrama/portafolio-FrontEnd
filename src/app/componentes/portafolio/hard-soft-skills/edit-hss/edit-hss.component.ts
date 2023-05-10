@@ -33,25 +33,27 @@ export class EditHssComponent implements OnInit {
     this.formHSS = this.FormBuilder.group({
       titulo: ['', [Validators.required]],
       detalle: ['', [Validators.required]],
-      porcentaje: ['', [Validators.required]]
+      porcentaje: ['', []]
     });
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void {    
     if (this.hss != null || this.hss != undefined) {
       this.titulo = this.hss.titulo;
       this.detalle = this.hss.detalle;
       this.porcentaje = this.hss.porcentaje;
-      this.setPorcentajeRange(this.hss.porcentaje);
+      this.setPorcentajeRange(this.porcentaje);
+      
+      this.formHSS.controls['porcentaje'].setValue(this.porcentaje);
       this.estadoFormAlta = false;
+        
     }
+    
   }
 
   onUpdateHSS(): void {
     if (this.formHSS.valid) {
-      console.log("FORM VALIDO");
-      if (this.estadoFormAlta != true) {
-        console.log("MODIFICAR");
+      if (this.hss != null || this.hss != undefined) {
         let hssUpdate = this.hss;
 
         hssUpdate.titulo = this.formHSS.get("titulo")?.value;
@@ -60,9 +62,8 @@ export class EditHssComponent implements OnInit {
 
         this.HardSoftSkillsService.update(hssUpdate).subscribe();
 
-        this.modalClose();
-      }else{
-        console.log("ALTA");
+        this.procesoLoading();
+      }else{        
         this.onAddHSS();
       }
     }
@@ -98,13 +99,13 @@ export class EditHssComponent implements OnInit {
 
   setPorcentajeRange(porcentaje: string): void {
     let auxPorcentaje = <HTMLInputElement>document.getElementById('porcentaje');
-    auxPorcentaje.value = porcentaje;
+    auxPorcentaje.value = porcentaje;    
   }
 
   captureRange(): void {
     let porcentaje = <HTMLInputElement>document.getElementById('porcentaje');
 
-    this.porcentaje = porcentaje.value;
+    this.porcentaje = porcentaje.value;    
   }
 
   modalClose() {

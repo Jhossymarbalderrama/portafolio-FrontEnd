@@ -32,7 +32,9 @@ app-edit-hss, app-modal-borrar-seccion{
 }
 .container_hss{     
     padding: 1em;
-    background-color: #1a2b4ead;    
+    background-color: #446dbf7c;    
+    background-image: linear-gradient(147deg, #446dbf7c 0%, #1a2b4e8a 70%);
+
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     border: 1.5px solid rgba(209, 213, 219, 0.3);
