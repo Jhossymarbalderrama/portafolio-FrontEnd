@@ -1,27 +1,39 @@
-# MyPortafolio
+# Proyecto Final Argentina Programa 4.0
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.3.
+<p  align="center">
+     <img src="./src/assets/img/readme/home_portafolio.png" alt="drawing" style="width:400px;"/> 
+</p>
 
-## Development server
+Proyecto Frontend sobre mí portafolio construido con los Framework Angular. Este proyecto cuenta con una coneccion a un Backend creado con Spring Boot y a una BD (Base de datos) MySQL que almacena los datos de mi portafolio.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tecnologías Utilizadas
 
-## Code scaffolding
+<p  align="center">
+     <img src="./src/assets/img/readme/arg_programa.png" alt="drawing" style="width:400px;"/> 
+</p>
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Angular 13.3.11:** Framework de desarrollo web (Frontend).
+- **Node 16.14.0:** Version node utilizada.
+- **Spring Boot 15(Java version 17) :** Desarrollo de API (Backend).
+- **MySQL 8.0.9:** Versión del cliente de base de datos Mysql.
+- **Bootstrap 5.2.0:** Framework de diseño web que permite crear interfaces de usuario modernas y responsivas.
+- **Font Awesome 0.10.0:** Biblioteca de íconos y herramientas para agregar íconos personalizados a la aplicación.
 
-## Build
+## Características de la aplicación
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Clases:** Definicion de clases para las entidades utilizadas en mi portafolio.
+- **Componentes:** Separacion de componentes por capas para secciones del proyecto.
+- **Módulos:** Organizacion de Modulos.
+- **Servicios:** Servicios creados para la interaccion con la API (backend) mediante peticiones HTTP y Firebase (Storage de Fotos).
+- **Bootstrap:** Se utilizó el framework de diseño web Bootstrap para crear una interfaz de usuario moderna y responsiva, facilitando la visualización y navegación de la aplicación.
+- **Font Awesome:** Se agregaron iconos personalizados de Font Awesome a la aplicación para mejorar la experiencia de usuario y hacer la interfaz más atractiva y fácil de usar.
+- **Firebase:** La aplicación está desplegada en Firebase, un servicio de Google que permite el alojamiento web y la autenticación de usuarios.
 
-## Running unit tests
+## Conexión con el backend
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Render:** Servicio de hosting y deployment de aplicaciones web en la nube (Backend).
+- **Clever Cloud:** Servicio de hosting y deployment de aplicaciones en la nube para Java, Node.js, PHP y más (Base de datos).
 
-## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Contacto 📱
+* Gmail: jhossymarbalderrama@gmail.com
