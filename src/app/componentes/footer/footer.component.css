@@ -41,11 +41,11 @@
     }    */
 
     .row{
+        margin:0px;
         align-items: center !important;
 
         text-align: center !important;
         display: flex;
         justify-content: center !important;
     }
-
 }

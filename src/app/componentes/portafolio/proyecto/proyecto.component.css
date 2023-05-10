@@ -69,3 +69,7 @@ fa-icon{
   background-image: linear-gradient(147deg, #80fa80 0%, #339933 60%);
   border: 0.005em solid rgba(67, 67, 67, 0.501);
 }
+
+.row {
+    margin:0px;
+  }
