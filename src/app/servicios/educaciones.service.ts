@@ -8,8 +8,8 @@ import { Educacion } from '../clases/educacion';
 })
 export class EducacionesService {
 
-  // private url: string = "http://localhost:8080/api/educaciones/";
-  private url: string = "https://portafolio-backend-balderrama.onrender.com/api/educaciones/";
+  private url: string = "http://localhost:8080/api/educaciones/";
+  // private url: string = "https://portafolio-backend-balderrama.onrender.com/api/educaciones/";
 
   constructor(
     private http: HttpClient

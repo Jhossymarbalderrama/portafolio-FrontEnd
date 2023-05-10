@@ -32,13 +32,6 @@ app-edit-hss, app-modal-borrar-seccion{
 }
 .container_hss{     
     padding: 1em;
-    /* background-color: #00348e2b; */
-    /* background-color: #022d772b; */
-    /* background-color: #03338536;
-    -webkit-backdrop-filter: blur(2px);
-    backdrop-filter: blur(2px);
-    border: 1.5px solid rgba(209, 213, 219, 0.3); */
-
     background-color: #1a2b4ead;    
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
@@ -61,17 +54,28 @@ app-edit-hss, app-modal-borrar-seccion{
     transform: scale(0.9);
 }
 
-.btn-edit{    
-    background-color: rgba(255, 132, 0, 0.694);
+fa-icon{
+    color: #494949;
 }
 
+.btn-edit{    
+    background-color: #ffe96a;
+    background-image: linear-gradient(147deg, #ffe96a 0%, #fda605 60%);
+    border: 0.005em solid rgba(67, 67, 67, 0.501);
+}   
+
 .btn-clos{   
-    background-color: rgba(255, 19, 2, 0.761); 
+    background-color: #dc3d12;
+    background-image: linear-gradient(147deg, #dc3d12 0%, #dc3d12 60%);
+    border: 0.005em solid rgba(67, 67, 67, 0.501);
 }
 
 .btn-add{   
-    background-color: rgba(10, 201, 0, 0.761); 
+  background-color: #80fa80;
+  background-image: linear-gradient(147deg, #80fa80 0%, #339933 60%);
+  border: 0.005em solid rgba(67, 67, 67, 0.501);
 }
+
 
 .row {
     margin:0px;

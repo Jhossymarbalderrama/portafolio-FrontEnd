@@ -23,8 +23,11 @@ img{
 }
 
 .btn-edit{    
-    background-color: rgba(255, 132, 0, 0.694);
-}
+    background-color: #ffe96a;
+    background-image: linear-gradient(147deg, #ffe96a 0%, #fda605 60%);
+    border: 0.005em solid rgba(67, 67, 67, 0.501);
+}   
+
 
 .row {
     margin:0px;

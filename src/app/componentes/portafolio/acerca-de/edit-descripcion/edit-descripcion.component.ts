@@ -43,7 +43,7 @@ export class EditDescripcionComponent implements OnInit {
         personaUpdate.sobre_mi = this.formPersona.get("sobre_mi")?.value;
   
         this.PersonasService.update(personaUpdate).subscribe();
-        this.modalClose();
+        this.procesoLoading();
       }else{
         this.onAddSobre_mi();
       }

@@ -8,22 +8,17 @@ p{
     font-weight: 600;
 }
 
-
 app-edit-foto-perfil, app-edit-acerca-de,
 app-edit-descripcion, app-modal-borrar-seccion{  
-  width: 100%;
-	height: 100%;
-	
-    
-	background: url("../../../../assets/img/fondos/patternWhite.jpg")
-	 ;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+    width: 100%;
+    height: 100%;
+
+    background: url("../../../../assets/img/fondos/patternWhite.jpg");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
-
-
 
 .container{    
     padding-top: 8em;
@@ -36,7 +31,6 @@ app-edit-descripcion, app-modal-borrar-seccion{
         z-index: 4;    
         width: 12em;
         margin-top: -15.5em;
-        /* margin-left: 5em; */
     }
 
     .navbar{
@@ -51,9 +45,8 @@ app-edit-descripcion, app-modal-borrar-seccion{
         z-index: 4;    
         width: 12em;
         margin-top: -14em;
-        /* margin-left: 22%;              */
     } 
-    
+
     .navbar{
         margin-top: -0.2em;
         margin-bottom: 10px;
@@ -64,7 +57,6 @@ app-edit-descripcion, app-modal-borrar-seccion{
     z-index: 4;
     border-radius: 100%;
     border: 7px solid white;
-
     width: 230.382px !important;
     height: 233.646px !important;    
 }
@@ -73,13 +65,12 @@ app-edit-descripcion, app-modal-borrar-seccion{
     -webkit-user-select: none; 
     -ms-user-select: none; 
     user-select: none;   
-
     align-items: center !important;
-
     text-align: center !important;
     display: flex;
     justify-content: center !important;
 }
+
 .centrar{
     align-items: center !important;
     text-align: center !important;
@@ -99,7 +90,6 @@ app-edit-descripcion, app-modal-borrar-seccion{
 
 .perfil_info_sobre_mi{
     z-index: 4;
-    /* margin-top: -6em; */
     margin-left: 2em;
     font-weight: 600;
     margin-bottom: 3em;
@@ -122,11 +112,21 @@ app-edit-descripcion, app-modal-borrar-seccion{
 }
 
 .btn-edit{    
-    background-color: rgba(255, 132, 0, 0.694);
-}
+    background-color: #ffe96a;
+    background-image: linear-gradient(147deg, #ffe96a 0%, #fda605 60%);
+    border: 0.005em solid rgba(67, 67, 67, 0.501);
+}   
 
 .btn-clos{   
-    background-color: rgba(255, 19, 2, 0.761); 
+    background-color: #dc3d12;
+    background-image: linear-gradient(147deg, #dc3d12 0%, #dc3d12 60%);
+    border: 0.005em solid rgba(67, 67, 67, 0.501);
+}
+
+.btn-add{   
+    background-color: #80fa80;
+    background-image: linear-gradient(147deg, #80fa80 0%, #339933 60%);
+    border: 0.005em solid rgba(67, 67, 67, 0.501);
 }
 
 .btn-edit-foto-perfil{  
@@ -137,10 +137,6 @@ app-edit-descripcion, app-modal-borrar-seccion{
 .btn-edit-titulo-perfil{
     margin-top: -0.5em;     
     margin-left: 7em; 
-}
-
-.btn-add{   
-  background-color: rgba(10, 201, 0, 0.761); 
 }
 
 .row {

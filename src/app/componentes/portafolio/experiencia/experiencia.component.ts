@@ -61,6 +61,6 @@ export class ExperienciaComponent implements OnInit {
         this.experiencias = datos;
         this.getExperienciaXpersona();      
       });
-    }, 500);
+    }, 600);
   }
 }

@@ -9,8 +9,8 @@ import { Proyecto } from '../clases/proyecto';
 
 export class ProyectosService {
 
-  // private url: string = "http://localhost:8080/api/proyectos/";
-  private url: string = "https://portafolio-backend-balderrama.onrender.com/api/proyectos/";
+  private url: string = "http://localhost:8080/api/proyectos/";
+  // private url: string = "https://portafolio-backend-balderrama.onrender.com/api/proyectos/";
 
   
 
