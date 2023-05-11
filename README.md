@@ -1,4 +1,4 @@
-# Proyecto Final Argentina Programa 4.0
+# ©️Proyecto Final Argentina Programa 4.0 🚀 
 
 <p  align="center">
      <img src="./src/assets/img/readme/home_portafolio.png" alt="drawing" style="width:400px;"/> 
@@ -6,7 +6,8 @@
 
 Proyecto Frontend sobre mí portafolio construido con los Framework Angular. Este proyecto cuenta con una coneccion a un Backend creado con Spring Boot y a una BD (Base de datos) MySQL que almacena los datos de mi portafolio.
 
-## Tecnologías Utilizadas
+<a href='https://my-portafolio-7abab.web.app/' title='mi portafolio' target='_blank'>🚀 Mi Portafolio 👈<a/>
+## 📌 🖥️ Tecnologías Utilizadas  📱
 
 <p  align="center">
      <img src="./src/assets/img/readme/arg_programa.png" alt="drawing" style="width:400px;"/> 
@@ -19,7 +20,7 @@ Proyecto Frontend sobre mí portafolio construido con los Framework Angular. Est
 - **Bootstrap 5.2.0:** Framework de diseño web que permite crear interfaces de usuario modernas y responsivas.
 - **Font Awesome 0.10.0:** Biblioteca de íconos y herramientas para agregar íconos personalizados a la aplicación.
 
-## Características de la aplicación
+## 📌📁 Características de la aplicación 📚
 
 - **Clases:** Definicion de clases para las entidades utilizadas en mi portafolio.
 - **Componentes:** Separacion de componentes por capas para secciones del proyecto.
@@ -29,11 +30,11 @@ Proyecto Frontend sobre mí portafolio construido con los Framework Angular. Est
 - **Font Awesome:** Se agregaron iconos personalizados de Font Awesome a la aplicación para mejorar la experiencia de usuario y hacer la interfaz más atractiva y fácil de usar.
 - **Firebase:** La aplicación está desplegada en Firebase, un servicio de Google que permite el alojamiento web y la autenticación de usuarios.
 
-## Conexión con el backend
+## 📌🔐 Conexiónes Backend y Base de datos ⚙️
 
 - **Render:** Servicio de hosting y deployment de aplicaciones web en la nube (Backend).
 - **Clever Cloud:** Servicio de hosting y deployment de aplicaciones en la nube para Java, Node.js, PHP y más (Base de datos).
 
 
-## Contacto 📱
+## 📌 Contacto ✉️
 * Gmail: jhossymarbalderrama@gmail.com
