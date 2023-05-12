@@ -16,6 +16,10 @@ hr {
     border:1px dashed;
 }
 
+circle-progress:hover{
+    cursor: pointer;    
+}
+
 app-edit-hss, app-modal-borrar-seccion{  
     color: black;
     text-shadow: none;

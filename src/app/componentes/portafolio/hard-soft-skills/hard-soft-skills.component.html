@@ -1,4 +1,3 @@
-
 <div id="habilidades" class="container_hss border">
     <div class="container">
         <div class="row container_titulo">
@@ -8,9 +7,10 @@
             </div>
 
             <div class="col-3" align="right">
-                <div *ngIf="AuthService.estadoLogin" class="btn btn-add" align="center" (click)="openModal(modalHssADD)">
-                    <fa-icon [icon]="faPlus"></fa-icon>                             
-                </div>   
+                <div *ngIf="AuthService.estadoLogin" class="btn btn-add" align="center"
+                    (click)="openModal(modalHssADD)">
+                    <fa-icon [icon]="faPlus"></fa-icon>
+                </div>
             </div>
         </div>
 
@@ -33,15 +33,18 @@
                         </div>
                     </div>
                 </div>
-                
-                <h3 style="font-weight: bold;">{{hss.titulo}}</h3>                
+
+                <h3 style="font-weight: bold;">{{hss.titulo}}</h3>
+
 
                 <circle-progress [percent]="hss.porcentaje" [radius]="100" [showUnits]="true" [showTitle]="true"
                     [titleColor]="'#f2f2f2'" [titleFontSize]="'3em'" [titleFontWeight]="'bold'" [showSubtitle]="true"
                     [subtitle]="hss?.detalle" [subtitleColor]="'#f2f2f2'" [subtitleFontSize]="'0.9em'"
                     [subtitleFontWeight]="'bold'" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
                     [outerStrokeColor]="'#ce5432'" [innerStrokeColor]="'#f29100'" [animation]="true"
-                    [animationDuration]="600" [unitsFontSize]="'26'" [unitsColor]="'#f2f2f2'"></circle-progress>
+                    [animationDuration]="600" [unitsFontSize]="'26'" [unitsColor]="'#f2f2f2'">
+                </circle-progress>
+
 
                 <ng-template #modalHss let-modal>
                     <div class="modal-header">

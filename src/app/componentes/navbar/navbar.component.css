@@ -8,7 +8,7 @@
 /*Desktop*/
 @media (min-width:576px){
   .btn{
-    width: 120px;
+    width: 150px;
   }
 }
 
@@ -26,6 +26,10 @@
   a, .btn{
     min-width: 100%;
   }
+}
+
+fa-icon{
+  padding-right: 4px;
 }
 
 .btn{    
