@@ -26,6 +26,12 @@
   a, .btn{
     min-width: 100%;
   }
+
+ 
+}
+
+.container{
+  padding-top: 3.5em;
 }
 
 fa-icon{
@@ -67,3 +73,4 @@ fa-icon{
 .row {
   margin:0px;
 }
+
