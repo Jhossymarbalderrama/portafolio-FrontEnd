@@ -57,6 +57,6 @@ export class AcercaDeComponent implements OnInit {
           this.persona = datos_persona;
         });
       }
-    }, 500);
+    }, 1000);
   }
 }

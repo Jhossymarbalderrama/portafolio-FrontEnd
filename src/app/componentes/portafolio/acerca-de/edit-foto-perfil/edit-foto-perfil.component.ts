@@ -4,6 +4,7 @@ import { AuthService } from 'src/app/servicios/auth.service';
 import { ImageService } from 'src/app/servicios/image.service';
 import { PersonasService } from 'src/app/servicios/personas.service';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-edit-foto-perfil',
@@ -19,6 +20,7 @@ export class EditFotoPerfilComponent implements OnInit {
 
   constructor(
     private ImageService: ImageService,
+    private NgbModal: NgbModal
   ) { 
 
   }
@@ -33,6 +35,11 @@ export class EditFotoPerfilComponent implements OnInit {
     this.ImageService.uploadImagePerfil(file, this.persona);
     setTimeout(() => {
       this.loading = false;
+      this.modalClose();
     }, 1300);
+  }
+
+  modalClose() {
+    this.NgbModal.dismissAll();
   }
 }

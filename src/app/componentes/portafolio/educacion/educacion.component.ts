@@ -61,6 +61,6 @@ export class EducacionComponent implements OnInit {
         this.eduaciones = datos;
         this.getEducacionsXpersona();      
       });
-    }, 700);
+    }, 1000);
   }  
 }

@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Persona } from 'src/app/clases/persona';
 import { ImageService } from 'src/app/servicios/image.service';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-edit-banner',
@@ -15,7 +16,8 @@ export class EditBannerComponent implements OnInit {
   loading = false;
   
   constructor(
-    private ImageService: ImageService
+    private ImageService: ImageService,
+    private NgbModal: NgbModal
   ) { }
 
   ngOnInit(): void {
@@ -27,6 +29,11 @@ export class EditBannerComponent implements OnInit {
     this.ImageService.uploadBannerPerfil(file, this.persona);
     setTimeout(() => {
       this.loading = false;
+      this.modalClose();
     }, 2000);
+  }
+
+  modalClose() {
+    this.NgbModal.dismissAll();
   }
 }

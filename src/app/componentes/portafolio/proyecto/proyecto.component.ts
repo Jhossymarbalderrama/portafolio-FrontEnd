@@ -53,7 +53,7 @@ export class ProyectoComponent implements OnInit {
         this.proyectos = datos;
         this.getProyectosXpersona();  
       });
-    }, 500);
+    }, 1000);
   }
 
   getProyectosXpersona():void{

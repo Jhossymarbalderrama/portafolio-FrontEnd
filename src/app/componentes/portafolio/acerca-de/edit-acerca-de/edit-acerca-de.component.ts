@@ -60,7 +60,7 @@ export class EditAcercaDeComponent implements OnInit {
 
     setTimeout(() => {
       this.loading = false;
-      this.modalClose()
+      this.modalClose();
     }, 1300);
   }
 

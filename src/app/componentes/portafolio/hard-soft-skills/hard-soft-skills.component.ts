@@ -62,6 +62,6 @@ export class HardSoftSkillsComponent implements OnInit {
         this.hss = datos;
         this.getHSSXpersona();      
       });
-    }, 500);
+    }, 1000);
   }
 }
