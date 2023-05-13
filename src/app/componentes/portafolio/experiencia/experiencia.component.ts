@@ -20,6 +20,7 @@ export class ExperienciaComponent implements OnInit {
   experiencias: any = [];
   experienciaPersona: any = [];
 
+  datosExperiencias: any;
   constructor(
     public AuthService: AuthService,
     private NgbModal: NgbModal,
@@ -61,6 +62,6 @@ export class ExperienciaComponent implements OnInit {
         this.experiencias = datos;
         this.getExperienciaXpersona();      
       });
-    }, 600);
+    }, 1300);
   }
 }
