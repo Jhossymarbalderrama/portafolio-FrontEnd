@@ -59,49 +59,42 @@ export class ModalBorrarSeccionComponent implements OnInit {
 
     this.PersonasService.update(deleteSobremi).subscribe();
 
-    this.cambiosProyectos();
-    
-    this.procesoLoading();
+    this.cambiosPortafolio();
   }
 
   deleteExperiencia(): void {
     this.ExperienciasService.delete(this.elementoBaja.objeto.id).subscribe();
 
-    this.cambiosProyectos();
-    
-    this.procesoLoading();
+    this.cambiosPortafolio();
   }
 
   deleteEducacion(): void {
     this.EducacionesService.delete(this.elementoBaja.objeto.id).subscribe();
 
-    this.cambiosProyectos();
-    
-    this.procesoLoading();
+    this.cambiosPortafolio();
   }
 
   deleteHSS(): void {
     this.HardSoftSkillsService.delete(this.elementoBaja.objeto.id).subscribe();
-    this.cambiosProyectos();
-    
-    this.procesoLoading();
+    this.cambiosPortafolio();
   }
 
   deleteProyeto(): void {
     this.ProyectosService.delete(this.elementoBaja.objeto.id).subscribe();
-    this.cambiosProyectos();
-    
-    this.procesoLoading();
+    this.cambiosPortafolio();
   }
 
-
-  procesoLoading(){
+  cambiosPortafolio():void{
     this.loading = true;
-    
     setTimeout(() => {
-      this.loading = false;
-      this.modalClose()
-    }, 1300);
+      this.cambiosProyectos();
+      this.procesoLoading();
+    }, 1000);    
+  }
+
+  procesoLoading(){      
+    this.loading = false;
+    this.modalClose();    
   }
 
   modalClose() {

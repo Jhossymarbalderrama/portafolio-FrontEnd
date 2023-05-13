@@ -29,8 +29,10 @@ export class ImageService {
     uploadBytes(imgRef, file)
       .then(async response => {    
         persona.url_foto_perfil = await getDownloadURL(response.ref);
-
-        this.PersonasService.update(persona).subscribe();
+        
+        setTimeout(() => {
+          this.PersonasService.update(persona).subscribe();
+        }, 1000);
       })
       .catch(error => console.log(error));
   }
@@ -45,7 +47,9 @@ export class ImageService {
       .then(async response => {    
         persona.url_banner_perfil = await getDownloadURL(response.ref);
 
-        this.PersonasService.update(persona).subscribe();
+        setTimeout(() => {
+          this.PersonasService.update(persona).subscribe();
+        }, 1000);
       })
       .catch(error => console.log(error));
   }
